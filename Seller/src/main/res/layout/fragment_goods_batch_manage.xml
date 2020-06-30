@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    android:descendantFocusability="blocksDescendants"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <TextView
+        android:id="@+id/line_1"
+        style="@style/Line"
+        android:layout_below="@id/nav_layout" />
+
+    <include
+        android:id="@+id/button_layout"
+        layout="@layout/tile_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+    <com.zjclugger.lib.view.ExtendsRecyclerView
+        android:id="@+id/goods_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/button_layout"
+        android:layout_below="@id/line_1" />
+
+</RelativeLayout>

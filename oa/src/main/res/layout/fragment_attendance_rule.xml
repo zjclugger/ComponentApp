@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <TextView
+        android:id="@+id/tv_add_office_place"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_smallest"
+        android:layout_marginBottom="@dimen/margin_smallest"
+        android:background="@color/bg_white"
+        android:drawableLeft="@mipmap/ic_append_small"
+        android:drawablePadding="@dimen/margin_smallest"
+        android:padding="@dimen/margin_normal"
+        android:text="添加办公地点" />
+
+    <Switch
+        android:id="@+id/switch_out_attendance_allow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_white"
+        android:padding="@dimen/margin_normal"
+        android:text="允许外勤打卡"
+        android:thumb="@drawable/shape_switch_thumb"
+        android:track="@drawable/bg_switch" />
+
+    <TextView style="@style/LinePortal" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/bg_white">
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/elvv_attendance_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/margin_small"
+            app:label_text="08:30-"
+            app:label_text_color="@color/primary_gray"
+            app:label_text_gravity="right"
+            app:label_text_size="@dimen/text_size_small"
+            app:right_image_src="@mipmap/ic_arrow_right"
+            app:value_text="18:00"
+            app:value_text_color="@color/primary_gray"
+            app:value_text_gravity="left"
+            app:value_text_size="@dimen/htext_size_small" />
+
+        <TextView
+            android:id="@+id/tv_time_desc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/elvv_attendance_time"
+            android:gravity="center_vertical"
+            android:padding="@dimen/margin_normal"
+            android:text="考勤时间"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small" />
+    </RelativeLayout>
+
+    <TextView style="@style/LightGrayLinePortal" />
+
+    <com.zjclugger.lib.view.ExtendLabelValueView
+        android:id="@+id/elvv_effective_range"
+        style="@style/RuleItemStyle"
+        app:label_text="选择有效范围"
+        app:right_image_src="@mipmap/ic_arrow_right"
+        app:value_text="300米" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/place_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/total_view"
+        android:layout_marginTop="@dimen/margin_small"
+        android:scrollbars="vertical" />
+
+    <com.zjclugger.lib.view.ExtendLabelValueView
+        android:id="@+id/elvv_attendance_date"
+        style="@style/RuleItemStyle"
+        app:label_text="考勤日期"
+        app:right_image_src="@mipmap/ic_arrow_right" />
+</LinearLayout>

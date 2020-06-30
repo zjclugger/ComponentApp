@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_white">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nav_layout"
+        android:layout_marginTop="@dimen/margin_smallest"
+        android:orientation="vertical">
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/report_start_time"
+            style="@style/Report.LabelValueViewStyle"
+            app:label_text="开始时间"
+            app:value_text="2019-09-12" />
+
+        <TextView style="@style/Line" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/report_end_time"
+            style="@style/Report.LabelValueViewStyle"
+            app:label_text="结束时间"
+            app:value_text="2019-09-12" />
+
+        <TextView style="@style/Line" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/report_choose_member"
+            style="@style/Report.LabelValueViewStyle"
+            app:label_text="选择查询人群"
+            app:value_text="全员" />
+
+        <TextView style="@style/Line" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_normal"
+            android:background="@drawable/bg_button_orange"
+            android:text="导出报表"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_small" />
+    </LinearLayout>
+</RelativeLayout>

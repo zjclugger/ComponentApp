@@ -1,0 +1,50 @@
+<resources>
+    <string name="nav_drawer_open">nav_drawer_open</string>
+    <string name="nav_drawer_close">nav_drawer_close</string>
+
+    <string name="info_input_query">请输入查询内容</string>
+    <string name="text_confirm">确认</string>
+    <string name="text_cancel">取消</string>
+    <string name="deleting">正在删除...</string>
+    <string name="delete_success">删除成功</string>
+    <string name="delete_failed">删除失败，请重试！</string>
+    <string name="error_identification">识别失败</string>
+    <string name="identification_wait">正在识别</string>
+    <string name="upload_failed">更新失败</string>
+    <string name="price_unit">&#165;%1$d</string>
+    <string name="info_last_page">已在最后一页</string>
+    <string name="info_first_page">已到第一页</string>
+    <!-- 电商 -->
+    <string name="login">登录</string>
+    <string name="loading">正在加载 ...</string>
+    <string name="tip_input_company">请输入公司名称</string>
+    <string name="tip_input_account">请输入您的手机号s</string>
+    <string name="tip_input_password">请输入您的密码</string>
+    <string name="tip_register_password">请输入6位以上密码</string>
+    <string name="tip_input_email">请输入您的邮箱</string>
+    <string name="tip_input_validation_code">请输入您的验证码</string>
+    <string name="copyright">西安麦特赛尔软件技术有限公司 版权所有</string>
+    <string name="logout">退出登录</string>
+    <string name="start_price">&#165;%1$.2f 起</string>
+    <string name="value_price">&#165;%1$.2f</string>
+    <string name="goods_price">&#165;%1$.2f</string>
+    <string name="food_lunch">午餐</string>
+    <string name="food_home_cooking">家常菜</string>
+    <string name="food_porridge_shop">包子粥铺</string>
+    <string name="food_japanese_korean_cuisine">日韩料理</string>
+    <string name="text_other">其他</string>
+    <string name="text_introduction">简介</string>
+    <string name="text_goods">商品</string>
+    <string name="text_settlement">结算</string>
+    <string name="text_all_choose">全选</string>
+    <string name="text_to_delivery">待发货</string>
+    <string name="text_to_payment">待付款</string>
+    <string name="text_to_receive">待收货</string>
+    <string name="text_completed">已完成</string>
+    <string name="text_user_cancel">用户取消</string>
+    <string name="text_timeout_cancel">超时取消</string>
+    <string name="order_cancel_alert">订单将在24小时后自动取消</string>
+    <string name="text_modify">修改</string>
+    <string name="text_to_handle">待处理</string>
+    <string name="text_delivered">已配送</string>
+</resources>

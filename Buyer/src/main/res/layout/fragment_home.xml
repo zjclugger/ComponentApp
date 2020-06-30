@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_white"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:id="@+id/nav_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:paddingTop="@dimen/margin_smallest"
+            android:paddingBottom="@dimen/margin_smallest"
+            android:text="商品管理"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_large" />
+
+        <ImageView
+            android:id="@+id/iv_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/margin_smallest"
+            android:padding="@dimen/margin_smallest"
+            android:src="@mipmap/ic_scan" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nav_title_layout"
+        android:background="@color/bg_white">
+
+        <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:drawableLeft="@mipmap/ic_location_gary"
+            android:paddingLeft="@dimen/margin_small"
+            android:paddingTop="@dimen/margin_smallest"
+            android:paddingRight="@dimen/margin_small"
+            android:paddingBottom="@dimen/margin_smallest"
+            android:text="西安"
+            android:textColor="@color/text_selected"
+            android:textSize="@dimen/text_size_large" />
+
+        <com.zjclugger.lib.view.JSearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/tv_city" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_layout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.youth.banner.Banner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="@color/background_all" />
+
+            <!-- 模块入口 -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/module_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small" />
+
+            <TextView style="@style/Line" />
+
+            <!-- 功能入口 -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/function_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small" />
+
+            <com.zjclugger.lib.view.ExtendLabelValueView
+                android:id="@+id/to_vip_title"
+                style="@style/More.PageItemTitleStyle"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:background="@color/yellow"
+                app:label_text="即刻加入会员，享受更多优惠"
+                app:left_image_height="25dp"
+                app:left_image_src="@mipmap/ic_vip_white"
+                app:left_image_width="25dp"
+                app:middle_text_color="@color/dark_green"
+                app:middle_text_gravity="left"
+                app:middle_text_size="@dimen/text_size_large"
+                app:middle_text_weight="0"
+                app:value_text="立即开通>>"
+                app:value_text_color="@color/dark_green"
+                app:value_text_gravity="right"
+                app:value_text_size="@dimen/text_size_large" />
+
+            <TextView
+                style="@style/Line"
+                android:layout_height="5dp" />
+
+            <!-- 推荐入口 -->
+            <com.zjclugger.lib.view.ExtendLabelValueView
+                android:id="@+id/recommendation_list_title"
+                style="@style/More.PageItemTitleStyle"
+                android:paddingBottom="@dimen/margin_small"
+                app:label_text="爆款推荐"
+                app:middle_text_color="@color/red"
+                app:middle_text_gravity="left"
+                app:middle_text_size="@dimen/text_size_large"
+                app:middle_text_weight="0"
+                app:right_image_src="@mipmap/ic_refresh"
+                app:value_text="换一换"
+                app:value_text_color="@color/primary_orange"
+                app:value_text_gravity="right"
+                app:value_text_size="@dimen/text_size_large" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recommendation_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small" />
+
+            <TextView
+                style="@style/Line"
+                android:layout_height="5dp" />
+
+            <!-- 附近商家 -->
+            <com.zjclugger.lib.view.ExtendLabelValueView
+                android:id="@+id/business_title"
+                style="@style/More.PageItemTitleStyle"
+                app:label_text="附近商家"
+                app:middle_text_color="@color/red"
+                app:middle_text_gravity="left"
+                app:middle_text_size="@dimen/text_size_large"
+                app:middle_text_weight="0" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/business_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/nav_title"
+        layout="@layout/detail_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/status_bar_view_height" />
+
+    <TextView
+        android:id="@+id/line1"
+        style="@style/Line"
+        android:layout_height="1dp"
+        android:layout_below="@id/nav_title" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="@dimen/margin_small">
+
+                <com.zjclugger.lib.view.LabelValueView
+                    android:id="@+id/lvv_total_order_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:padding="@dimen/margin_smallest"
+                    app:label_text="8888.99"
+                    app:label_text_width="120dp"
+                    app:label_text_gravity="center"
+                    app:label_text_color="@color/text_gray"
+                    app:label_text_size="@dimen/text_size_normal"
+                    android:orientation="vertical"
+                    app:layout_orientation="VERTICAL"
+                    app:value_text_gravity="center"
+                    app:value_text="今日订单收入"
+                    app:value_text_width="120dp"
+                    app:value_text_color="@color/text_gray"
+                    app:value_text_size="@dimen/text_size_normal" />
+
+                <com.zjclugger.lib.view.LabelValueView
+                    android:id="@+id/lvv_address_receive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:padding="@dimen/margin_smallest"
+                    app:label_text="8888.99"
+                    app:label_text_width="120dp"
+                    app:label_text_gravity="center"
+                    app:label_text_color="@color/text_gray"
+                    app:label_text_size="@dimen/text_size_normal"
+                    android:orientation="vertical"
+                    app:layout_orientation="VERTICAL"
+                    app:value_text_gravity="center"
+                    app:value_text="今日订单数"
+                    app:value_text_width="120dp"
+                    app:value_text_color="@color/text_gray"
+                    app:value_text_size="@dimen/text_size_normal" />
+
+
+            </LinearLayout>
+
+            <TextView style="@style/Line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_small">
+
+                <com.zjclugger.lib.view.ImageTextView
+                    android:id="@+id/shop_manage"
+                    style="@style/Small.ImageTextViewStyle"
+                    android:layout_weight="0.25"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:itv_icon_src="@mipmap/ic_shop_info"
+                    app:itv_text_size="@dimen/text_size_normal"
+                    app:itv_text="店铺管理" />
+
+                <com.zjclugger.lib.view.ImageTextView
+                    android:id="@+id/goods_manage"
+                    style="@style/Small.ImageTextViewStyle"
+                    android:layout_weight="0.25"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:itv_icon_src="@mipmap/ic_shop_goods"
+                    app:itv_text_size="@dimen/text_size_normal"
+                    app:itv_text="商品管理" />
+
+                <com.zjclugger.lib.view.ImageTextView
+                    android:id="@+id/finance_manage"
+                    style="@style/Small.ImageTextViewStyle"
+                    android:layout_weight="0.25"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:itv_icon_src="@mipmap/ic_shop_finance"
+                    app:itv_text_size="@dimen/text_size_normal"
+                    app:itv_text="财务管理" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

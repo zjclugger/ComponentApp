@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.zjclugger.lib.view.CircleImageTextView
+        android:id="@+id/itv_attendance"
+        style="@style/CITVApproveStyle"
+        android:layout_margin="@dimen/margin_smallest"
+        app:citv_add_visibility="GONE"
+        app:citv_background="@drawable/shape_corners_primary"
+        app:citv_civ_background_stroke_width="-5dp"
+        app:citv_delete_visibility="GONE"
+        app:citv_padding="@dimen/margin_small"
+        app:citv_text="日报"
+        app:citv_text_color="@color/black" />
+
+</LinearLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="85dp"
+    android:layout_height="85dp">
+
+    <ImageView
+        android:id="@+id/upload_file"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/img_picture_default" />
+
+    <ImageView
+        android:id="@+id/upload_cloud"
+        style="@style/IconUploadStyle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:layout_margin="@dimen/margin_smallest"
+        android:src="@mipmap/ic_cloud_white" />
+
+    <RelativeLayout
+        android:id="@+id/err_result_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/half_transparent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/upload_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/darker_transparent"
+            android:gravity="center"
+            android:padding="@dimen/margin_smallest"
+            android:text="识别失败"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_small" />
+
+        <ImageView
+            android:id="@+id/upload_retry"
+            style="@style/IconUploadStyle"
+            android:layout_above="@id/upload_message"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:src="@mipmap/ic_retry_white" />
+
+        <ImageView
+            android:id="@+id/upload_trash"
+            style="@style/IconUploadStyle"
+            android:layout_above="@id/upload_message"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:src="@mipmap/ic_trash_white_small" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

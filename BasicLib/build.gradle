@@ -1,0 +1,105 @@
+apply plugin: 'com.android.library'
+/*
+* 基础库：引用并封装【网络库，图片加载库，JSON库，数据库ORM，日志，权限】等，主要以引用第3方库为主
+*/
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation rootProject.ext.dependencies["junit"]
+
+    //support
+    api rootProject.ext.dependencies["material"]
+
+    //aac
+    api rootProject.ext.dependencies["androidxCore"]
+    api rootProject.ext.dependencies["androidxCoreRuntime"]
+
+    //androidx
+    api rootProject.ext.dependencies["androidxConstraintlayout"]
+    api rootProject.ext.dependencies["androidxAppcompat"]
+   // api rootProject.ext.dependencies["androidxViewmodel"]
+    api rootProject.ext.dependencies["androidxRoomCommon"]
+    api rootProject.ext.dependencies["androidxRoomRuntime"]
+    annotationProcessor rootProject.ext.dependencies["androidxRoomCompiler"]
+    api rootProject.ext.dependencies["androidxRoomRxjava2"]
+    api rootProject.ext.dependencies["androidxLifecycle-ext"]
+
+    //retrofit
+    api rootProject.ext.dependencies["retrofit"]
+    api rootProject.ext.dependencies["retrofitConverter-gson"]
+    api rootProject.ext.dependencies["retrofitConverter-scalars"]
+
+    //okhttp
+    api rootProject.ext.dependencies["okhttp3Logging-interceptor"]
+    api rootProject.ext.dependencies["okhttp3"]
+
+    //butter knife
+    api rootProject.ext.dependencies["butterknife"]
+
+    //arouter
+    api rootProject.ext.dependencies["arouter"]
+    annotationProcessor rootProject.ext.dependencies["arouterCompiler"]
+
+    api rootProject.ext.dependencies["autoService"]
+    annotationProcessor rootProject.ext.dependencies["autoService"]
+
+    //banner
+    api rootProject.ext.dependencies["glide"]
+    // implementation rootProject.ext.dependencies["fresco"]
+    api rootProject.ext.dependencies["zxyRecovery"]
+
+    //rxjava and rxandroid
+    api rootProject.ext.dependencies["rxjava2"]
+    api rootProject.ext.dependencies["rxandroid2"]
+
+    //api rootProject.ext.dependencies["exifinterface"]
+
+    //logger
+    api rootProject.ext.dependencies["logger"]
+
+    //permission
+    api rootProject.ext.dependencies["permission"]
+    annotationProcessor rootProject.ext.dependencies["permissionProcessor"]
+
+    api rootProject.ext.dependencies["RecyclerViewAdapter"]
+
+    // api rootProject.ext.dependencies["SuperTextView"]
+
+    api rootProject.ext.dependencies["JPickerView"]
+
+    api rootProject.ext.dependencies["floatingactionbutton"]
+
+    api rootProject.ext.dependencies["retrofitAdapter-rxjava2"]
+
+    api rootProject.ext.dependencies["LiveEventBus"]
+
+    //SmartRefreshLayout
+    api rootProject.ext.dependencies["SmartRefreshLayout"]
+
+    //DevShapeUtils
+    //api rootProject.ext.dependencies["DevShapeUtils"]
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <TextView
+        android:id="@+id/line_1"
+        style="@style/Line"
+        android:layout_below="@id/nav_layout" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/bill_list_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_layout_height"
+        android:layout_below="@id/line_1"
+        android:background="@color/background_all"
+        app:tabIndicatorColor="@color/text_selected"
+        app:tabIndicatorHeight="2dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/text_selected"
+        app:tabTextColor="@color/black" />
+
+    <TextView
+        android:id="@+id/line_2"
+        style="@style/Line"
+        android:layout_below="@id/bill_list_tabs" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bill_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/line_2"
+        android:padding="@dimen/padding_smallest" />
+
+    <com.zjclugger.lib.view.FloatButtonView
+        android:id="@+id/to_top_view"
+        style="@style/Right.FloatButtonViewStyle"
+        android:visibility="invisible" />
+
+    <RelativeLayout
+        android:id="@+id/content_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>

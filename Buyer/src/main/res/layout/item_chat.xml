@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_color"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/margin_normal"
+    android:paddingRight="@dimen/margin_small">
+
+    <com.zjclugger.lib.view.CircleImageView
+        android:id="@+id/civ_shop_service_head"
+        style="@style/ChatHeadStyle"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="@dimen/margin_smallest"
+        android:src="@mipmap/image_head" />
+
+    <com.zjclugger.lib.view.CircleImageView
+        android:id="@+id/civ_user_head"
+        style="@style/ChatHeadStyle"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/margin_smallest"
+        android:src="@mipmap/image_head" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_smallest"
+        android:layout_marginBottom="@dimen/margin_smallest"
+        android:layout_toLeftOf="@id/civ_user_head"
+        android:layout_toRightOf="@id/civ_shop_service_head"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/chat_message_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button_white"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_small">
+
+            <TextView
+                android:id="@+id/service_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:text="聊天对象"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:id="@+id/message_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity=""
+                android:maxLength="500"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="内容。。。。"
+                android:textSize="@dimen/text_size_small" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

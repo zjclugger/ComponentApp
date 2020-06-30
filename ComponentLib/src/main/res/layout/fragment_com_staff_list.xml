@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.zjclugger.lib.view.JSearchView
+        android:id="@+id/com_search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/line1"
+        style="@style/Line"
+        android:layout_below="@id/com_search_view" />
+    <!-- <include
+         android:id="@+id/search_layout"
+         layout="@layout/layout_search_view"></include>-->
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/com_tl_tab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_layout_height"
+        android:layout_below="@id/com_search_view"
+        android:background="@color/background_all"
+        app:tabIndicatorColor="@color/text_selected"
+        app:tabIndicatorHeight="2dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/text_selected"
+        app:tabTextColor="@color/gray" />
+
+    <TextView
+        android:id="@+id/line2"
+        style="@style/Line"
+        android:layout_below="@id/com_tl_tab" />
+
+    <com.zjclugger.lib.view.dropdown.DropDownView
+        android:id="@+id/com_dropDownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/com_tl_tab"
+        app:ddv_background_color="@color/white_6"
+        app:ddv_divider_color="@color/mask_color"
+        app:ddv_height_percent="0.7"
+        app:ddv_mask_color="@color/mask_color"
+        app:ddv_selected_icon="@mipmap/ic_drop_down_selected_icon"
+        app:ddv_text_selected_color="@color/drop_down_selected"
+        app:ddv_text_size="12sp"
+        app:ddv_text_unselected_color="@color/drop_down_unselected"
+        app:ddv_under_line_color="@color/gray"
+        app:ddv_unselected_icon="@mipmap/ic_drop_down_unselected_icon" />
+</RelativeLayout>
+

@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ImageTextView">
+        <attr name="itv_icon_src" format="reference|integer" />
+        <attr name="itv_icon_drawable" format="reference|integer" />
+        <attr name="itv_image_width" format="dimension" />
+        <attr name="itv_image_height" format="dimension" />
+        <attr name="itv_image_margins" format="dimension" />
+        <attr name="itv_image_margin_left" format="dimension" />
+        <attr name="itv_image_margin_top" format="dimension" />
+        <attr name="itv_image_margin_right" format="dimension" />
+        <attr name="itv_image_margin_bottom" format="dimension" />
+        <attr name="itv_text" format="string" />
+        <attr name="itv_text_color" format="color" />
+        <attr name="itv_text_size" format="dimension" />
+        <attr name="itv_text_margins" format="dimension" />
+        <attr name="itv_text_margin_left" format="dimension" />
+        <attr name="itv_text_margin_top" format="dimension" />
+        <attr name="itv_text_margin_right" format="dimension" />
+        <attr name="itv_text_margin_bottom" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="LabelValueView">
+        <!-- layout -->
+        <attr name="layout_orientation" format="enum">
+            <enum name="HORIZONTAL" value="0" />
+            <enum name="VERTICAL" value="1" />
+        </attr>
+        <!-- left image view -->
+        <attr name="left_image_src" format="reference|integer" />
+        <attr name="left_image_drawable" format="reference|integer" />
+        <attr name="left_image_rotation" format="float" />
+        <attr name="left_image_width" format="dimension" />
+        <attr name="left_image_height" format="dimension" />
+        <attr name="left_image_scale_type" format="enum">
+            <enum name="matrix" value="0" />
+            <enum name="fitXY" value="1" />
+            <enum name="fixStart" value="2" />
+            <enum name="fixCenter" value="3" />
+            <enum name="fitEnd" value="4" />
+            <enum name="center" value="5" />
+            <enum name="centerCrop" value="6" />
+            <enum name="centerInside" value="7" />
+        </attr>
+        <!-- right image view -->
+        <attr name="right_image_src" format="reference|integer" />
+        <attr name="right_image_drawable" format="reference|integer" />
+        <attr name="right_image_rotation" format="float" />
+        <attr name="right_image_width" format="dimension" />
+        <attr name="right_image_height" format="dimension" />
+        <attr name="right_image_scale_type" format="enum">
+            <enum name="matrix" value="0" />
+            <enum name="fitXY" value="1" />
+            <enum name="fixStart" value="2" />
+            <enum name="fixCenter" value="3" />
+            <enum name="fitEnd" value="4" />
+            <enum name="center" value="5" />
+            <enum name="centerCrop" value="6" />
+            <enum name="centerInside" value="7" />
+        </attr>
+        <!--label view-->
+        <attr name="label_text" format="string" />
+        <attr name="label_text_color" format="color" />
+        <attr name="label_text_size" format="dimension" />
+        <attr name="label_text_width" format="dimension" />
+        <attr name="label_text_min_width" format="dimension" />
+        <attr name="label_text_min_height" format="dimension" />
+        <attr name="label_text_height" format="dimension" />
+        <attr name="label_text_weight" format="float" />
+        <attr name="label_text_gravity" format="enum">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+        <attr name="label_text_style" format="enum">
+            <enum name="bold" value="0" />
+            <enum name="italic" value="1" />
+            <enum name="italic_bold" value="2" />
+        </attr>
+        <attr name="label_text_visibility" format="enum">
+            <enum name="VISIBLE" value="0" />
+            <enum name="INVISIBLE" value="4" />
+            <enum name="GONE" value="8" />
+        </attr>
+        <!--background 对应 <solid android:color="@color/transparent" /> border对应stroke-->
+        <attr name="label_text_background" format="reference|integer" />
+        <attr name="label_text_solid_color" format="color" />
+        <attr name="label_text_border_color" format="color" />
+        <attr name="label_text_border_width" format="dimension" />
+        <attr name="label_text_corner_radius" format="dimension" />
+        <attr name="label_text_topLeft_radius" format="dimension" />
+        <attr name="label_text_topRight_radius" format="dimension" />
+        <attr name="label_text_bottomLeft_radius" format="dimension" />
+        <attr name="label_text_bottomRight_radius" format="dimension" />
+        <!-- value textview -->
+        <attr name="value_text" format="string" />
+        <attr name="value_text_color" format="color" />
+        <attr name="value_text_size" format="dimension" />
+        <attr name="value_text_width" format="dimension" />
+        <attr name="value_text_height" format="dimension" />
+        <attr name="value_text_min_width" format="dimension" />
+        <attr name="value_text_min_height" format="dimension" />
+        <attr name="value_text_weight" format="float" />
+        <attr name="value_text_gravity" format="enum">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+        <attr name="value_text_style" format="enum">
+            <enum name="bold" value="0" />
+            <enum name="italic" value="1" />
+            <enum name="italic_bold" value="2" />
+        </attr>
+        <attr name="value_text_visibility" format="enum">
+            <enum name="VISIBLE" value="0" />
+            <enum name="INVISIBLE" value="4" />
+            <enum name="GONE" value="8" />
+        </attr>
+        <attr name="value_text_background" format="reference|integer" />
+        <attr name="value_text_solid_color" format="color" />
+        <attr name="value_text_border_color" format="color" />
+        <attr name="value_text_border_width" format="dimension" />
+        <attr name="value_text_corner_radius" format="dimension" />
+        <attr name="value_text_topLeft_radius" format="dimension" />
+        <attr name="value_text_topRight_radius" format="dimension" />
+        <attr name="value_text_bottomLeft_radius" format="dimension" />
+        <attr name="value_text_bottomRight_radius" format="dimension" />
+
+        <!-- middle textview -->
+        <attr name="middle_text" format="string" />
+        <attr name="middle_text_color" format="color" />
+        <attr name="middle_text_size" format="dimension" />
+        <attr name="middle_text_width" format="dimension" />
+        <attr name="middle_text_height" format="dimension" />
+        <attr name="middle_text_min_width" format="dimension" />
+        <attr name="middle_text_min_height" format="dimension" />
+        <attr name="middle_text_weight" format="float" />
+        <attr name="middle_text_gravity" format="enum">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+        <attr name="middle_text_style" format="enum">
+            <enum name="bold" value="0" />
+            <enum name="italic" value="1" />
+            <enum name="italic_bold" value="2" />
+        </attr>
+        <attr name="middle_text_visibility" format="enum">
+            <enum name="VISIBLE" value="0" />
+            <enum name="INVISIBLE" value="4" />
+            <enum name="GONE" value="8" />
+        </attr>
+        <attr name="middle_text_background" format="reference|integer" />
+        <attr name="middle_text_solid_color" format="color" />
+        <attr name="middle_text_border_color" format="color" />
+        <attr name="middle_text_border_width" format="dimension" />
+        <attr name="middle_text_corner_radius" format="dimension" />
+        <attr name="middle_text_topLeft_radius" format="dimension" />
+        <attr name="middle_text_topRight_radius" format="dimension" />
+        <attr name="middle_text_bottomLeft_radius" format="dimension" />
+        <attr name="middle_text_bottomRight_radius" format="dimension" />
+
+        <!-- edit text view -->
+        <attr name="edit_text" format="string" />
+        <attr name="edit_text_hint" format="string" />
+        <attr name="edit_text_color" format="color" />
+        <attr name="edit_text_size" format="dimension" />
+        <attr name="edit_text_width" format="dimension" />
+        <attr name="edit_text_height" format="dimension" />
+        <attr name="edit_text_min_width" format="dimension" />
+        <attr name="edit_text_min_height" format="dimension" />
+        <attr name="edit_text_weight" format="float" />
+        <attr name="edit_text_gravity" format="enum">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+        <attr name="edit_text_style" format="enum">
+            <enum name="bold" value="0" />
+            <enum name="italic" value="1" />
+            <enum name="italic_bold" value="2" />
+        </attr>
+        <attr name="edit_text_visibility" format="enum">
+            <enum name="VISIBLE" value="0" />
+            <enum name="INVISIBLE" value="4" />
+            <enum name="GONE" value="8" />
+        </attr>
+        <attr name="edit_text_background" format="reference|integer" />
+        <attr name="edit_text_solid_color" format="color" />
+        <attr name="edit_text_border_color" format="color" />
+        <attr name="edit_text_border_width" format="dimension" />
+        <attr name="edit_text_corner_radius" format="dimension" />
+        <attr name="edit_text_topLeft_radius" format="dimension" />
+        <attr name="edit_text_topRight_radius" format="dimension" />
+        <attr name="edit_text_bottomLeft_radius" format="dimension" />
+        <attr name="edit_text_bottomRight_radius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="DropDownView">
+        <attr name="ddv_under_line_color" format="color" />
+        <attr name="ddv_divider_color" format="color" />
+        <attr name="ddv_text_selected_color" format="color" />
+        <attr name="ddv_text_unselected_color" format="color" />
+        <attr name="ddv_background_color" format="color" />
+        <attr name="ddv_mask_color" format="color" />
+        <attr name="ddv_text_size" format="dimension" />
+        <attr name="ddv_selected_icon" format="reference" />
+        <attr name="ddv_unselected_icon" format="reference" />
+        <attr name="ddv_height_percent" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundAngleImageView">
+        <attr name="round_width" format="dimension" />
+        <attr name="round_height" format="dimension" />
+    </declare-styleable>
+
+    <!-- 圆形进度视图 -->
+    <declare-styleable name="CircleProgressView">
+        <!-- 圆圈与进度条的宽度 -->
+        <attr name="cpv_circle_stroke_width" format="dimension" />
+        <attr name="cpv_progress_stroke_width" format="dimension" />
+        <!-- 圆圈与进度条的颜色 -->
+        <attr name="cpv_circle_color" format="color" />
+        <attr name="cpv_progress_color" format="color" />
+        <!--进度条动画时长 -->
+        <attr name="cpv_animation_duration" format="integer" />
+        <!--圈内文字是否显示、颜色、大小 -->
+        <attr name="cpv_show_progress_text" format="boolean" />
+        <attr name="cpv_progress_text_color" format="color" />
+        <attr name="cpv_progress_text_size" format="dimension" />
+        <attr name="cpv_second_text_color" format="color" />
+        <attr name="cpv_second_text_size" format="dimension" />
+        <attr name="cpv_second_text" format="string" />
+    </declare-styleable>
+
+    <!--刻度盘进度视图-->
+    <declare-styleable name="DialProgressView">
+        <attr name="dpv_min_radius" format="dimension" />
+        <attr name="dpv_stroke_width" format="dimension" />
+        <attr name="dpv_circle_color" format="color" />
+        <attr name="dpv_ring_color" format="color" />
+        <attr name="dpv_dial_stroke_width" format="dimension" />
+        <attr name="dpv_dial_startY" format="dimension" />
+        <attr name="dpv_dial_stopY" format="dimension" />
+        <attr name="dpv_dial_color" format="color" />
+        <attr name="dpv_progress" format="integer" />
+        <attr name="dpv_start_angle" format="float" />
+        <attr name="dpv_text_color" format="color" />
+        <attr name="dpv_text_height" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_show_circle" format="boolean" />
+        <attr name="civ_text_color" format="color" />
+        <attr name="civ_text_size" format="dimension" />
+        <attr name="civ_text" format="string" />
+        <attr name="civ_background_radius" format="dimension" />
+        <attr name="civ_background_stroke_width" format="dimension" />
+        <attr name="civ_background_color" format="color" />
+        <attr name="civ_background_stroke_color" format="color" />
+        <!-- {@deprecated Use civ_circlebackground_color instead.} -->
+        <attr name="civ_fill_color" format="color" />
+        <attr name="civ_circle_background_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageTextView">
+        <attr name="citv_civ_border_width" format="dimension" />
+        <attr name="citv_civ_border_color" format="color" />
+        <attr name="citv_civ_border_overlay" format="boolean" />
+        <attr name="citv_civ_show_circle" format="boolean" />
+        <attr name="citv_civ_text_color" format="color" />
+        <attr name="citv_civ_text_size" format="dimension" />
+        <attr name="citv_civ_text" format="string" />
+        <attr name="citv_civ_background_radius" format="dimension" />
+        <attr name="citv_civ_background_stroke_width" format="dimension" />
+        <attr name="citv_civ_background_color" format="color" />
+        <attr name="citv_civ_background_stroke_color" format="color" />
+        <!-- {@deprecated Use civ_circlebackground_color instead.} -->
+        <attr name="citv_civ_fill_color" format="color" />
+        <attr name="citv_civ_circle_background_color" format="color" />
+        <attr name="citv_text_color" format="color" />
+        <attr name="citv_text_size" format="dimension" />
+        <attr name="citv_text" format="string" />
+        <attr name="citv_text_visibility" format="enum">
+            <enum name="VISIBLE" value="0" />
+            <enum name="INVISIBLE" value="4" />
+            <enum name="GONE" value="8" />
+        </attr>
+        <attr name="citv_delete_visibility" format="enum">
+            <enum name="VISIBLE" value="0" />
+            <enum name="INVISIBLE" value="4" />
+            <enum name="GONE" value="8" />
+        </attr>
+        <attr name="citv_add_visibility" format="enum">
+            <enum name="VISIBLE" value="0" />
+            <enum name="INVISIBLE" value="4" />
+            <enum name="GONE" value="8" />
+        </attr>
+        <attr name="citv_image_src" format="reference|integer" />
+        <attr name="citv_background" format="reference|integer" />
+        <attr name="citv_padding" format="dimension" />
+        <attr name="citv_left_layout_width" format="enum">
+            <enum name="MATCH_PARENT" value="-1" />
+            <enum name="WRAP_CONTENT" value="-2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="FloatButtonView">
+        <attr name="fbv_image_src" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundTextView">
+        <attr name="round_text_solid_color" format="color" />
+        <attr name="round_text_border_width" format="dimension" />
+        <attr name="round_text_border_color" format="color" />
+        <attr name="round_text_corner_radius" format="dimension" />
+        <attr name="round_text_topLeft_radius" format="dimension" />
+        <attr name="round_text_topRight_radius" format="dimension" />
+        <attr name="round_text_bottomLeft_radius" format="dimension" />
+        <attr name="round_text_bottomRight_radius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="LengthLimitEditTextView">
+        <attr name="lletv_max_length" format="integer" />
+        <attr name="lletv_counter_color" format="color" />
+        <attr name="lletv_content_text" format="string" />
+        <attr name="lletv_content_hint_text" format="string" />
+        <attr name="lletv_content_text_size" format="dimension" />
+        <attr name="lletv_content_text_color" format="color" />
+        <attr name="lletv_read_only" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SlideDetailsLayout">
+        <!-- float value for indicate the moment of switch panel-->
+        <attr name="percent" format="float" />
+        <!-- how long the animation keep-->
+        <attr name="duration" format="integer" />
+        <!-- default panel to show after init-->
+        <attr name="default_panel" format="enum">
+            <enum name="front" value="0" />
+            <enum name="behind" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>

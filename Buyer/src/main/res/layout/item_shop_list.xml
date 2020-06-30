@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/bg_white"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_small">
+
+    <ImageView
+        android:id="@+id/image_left"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/img_picture_default" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_toRightOf="@id/image_left"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_small">
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/food_shop_name"
+            style="@style/ExtendLabelValueStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:edit_text_visibility="GONE"
+            app:label_text="美食店铺名"
+            app:middle_text="快餐"
+            app:middle_text_color="@color/gray"
+            app:middle_text_size="@dimen/text_size_small"
+            app:value_text="正经营业"
+            app:value_text_color="@color/text_selected"
+            app:value_text_gravity="right"
+            app:value_text_size="@dimen/text_size_small"
+            app:value_text_weight="1" />
+
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:id="@+id/food_shop_score"
+            style="@style/Widget.MaterialRatingBar.RatingBar.Indicator.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginRight="@dimen/margin_smallest"
+            android:paddingLeft="2dp"
+            android:rating="2.5"
+            app:mrb_progressTint="@color/primary_orange" />
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/food_shop_price_address"
+            style="@style/ExtendLabelValueStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:edit_text_visibility="GONE"
+            app:label_text="@string/start_price"
+            app:label_text_color="@color/text_selected"
+            app:middle_text="快餐"
+            app:middle_text_color="@color/gray"
+            app:middle_text_size="@dimen/text_size_small"
+            app:value_text="朝阳区"
+            app:value_text_color="@color/text_selected"
+            app:value_text_gravity="right"
+            app:value_text_size="@dimen/text_size_small"
+            app:value_text_weight="1" />
+    </LinearLayout>
+
+</RelativeLayout>

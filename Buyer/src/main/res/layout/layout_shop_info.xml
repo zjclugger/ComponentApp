@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    android:descendantFocusability="blocksDescendants"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingBottom="@dimen/margin_normal">
+
+        <TextView
+            style="@style/ShopInfoTitleStyle"
+            android:drawableLeft="@mipmap/ic_time_clock"
+            android:text="店面照片" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/shop_image_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_smallest"
+            android:layout_marginRight="@dimen/margin_normal"
+            android:layout_marginBottom="@dimen/margin_normal" />
+
+        <TextView style="@style/Line" />
+
+        <TextView
+            style="@style/ShopInfoTitleStyle"
+            android:drawableLeft="@mipmap/ic_time_clock"
+            android:text="商铺信息" />
+
+        <TextView
+            android:id="@+id/shop_introduction"
+            style="@style/ShopInfoTitleStyle"
+            android:inputType="textMultiLine"
+            android:paddingTop="2dp"
+            android:paddingBottom="@dimen/margin_small"
+            android:text="老乡村餐饮连锁管理有限责任公司管理的“老乡村湖湘农家大碗菜”是一个成立于2003年12月的年轻品牌，成立期间，这一品牌以特有的湖湘文化、优秀稳定的出品和准确的市场定位赢得顾客的高度认可，老乡村人以赤子之心对支持老乡村的投资者和顾客坦诚相待，深层挖掘湖湘文化，狠抓出品和营运，规范管理体系，以“实现连锁经营，打造餐饮品牌；以餐饮为龙头，企业集团化”为发展愿景"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView style="@style/Line" />
+
+        <TextView
+            style="@style/ShopInfoTitleStyle"
+            android:drawableLeft="@mipmap/ic_time_clock"
+            android:text="营业时间" />
+
+        <TextView
+            android:id="@+id/shop_business_hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="@dimen/margin_smallest"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:text="周一至周日    10:00-22:00"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            style="@style/ShopInfoTitleStyle"
+            android:drawableLeft="@mipmap/ic_time_clock"
+            android:text="联系电话" />
+
+        <TextView
+            android:id="@+id/shop_telephone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="@dimen/margin_smallest"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:text="18688886666"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView style="@style/Line" />
+
+        <TextView
+            style="@style/ShopInfoTitleStyle"
+            android:drawableLeft="@mipmap/ic_time_clock"
+            android:text="联系地址" />
+
+        <TextView
+            android:id="@+id/shop_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="@dimen/margin_smallest"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:text="广东省深圳市南山区桃园路新桃园酒店"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_small" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

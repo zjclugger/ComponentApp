@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/et_content_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_edit_text_black"
+    android:gravity="center_vertical">
+
+    <EditText
+        android:id="@+id/et_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:gravity="top"
+        android:hint="请输入内容"
+        android:imeOptions="actionDone"
+        android:inputType="textMultiLine"
+        android:lineSpacingExtra="@dimen/margin_smallest"
+        android:minHeight="30dp"
+        android:padding="@dimen/margin_smallest"
+        android:paddingLeft="@dimen/margin_smallest"
+        android:paddingRight="@dimen/margin_smallest"
+        android:scrollbars="vertical"
+        android:scrollHorizontally="false"
+        android:singleLine="false"
+        android:textColor="@color/dark_black"
+        android:textSize="@dimen/text_size_small" />
+
+    <com.zjclugger.lib.view.ExtendLabelValueView
+        android:id="@+id/elvv_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_content"
+        android:layout_alignParentRight="true"
+        app:label_text="0"
+        app:label_text_color="@color/black"
+        app:label_text_size="@dimen/text_size_small"
+        app:middle_text="/"
+        app:middle_text_color="@color/light_gray"
+        app:middle_text_size="@dimen/text_size_small"
+        app:value_text="60"
+        app:value_text_color="@color/gray"
+        app:value_text_gravity="right"
+        app:value_text_size="@dimen/text_size_small" />
+</RelativeLayout>

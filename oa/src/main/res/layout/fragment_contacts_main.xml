@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/nav_layout"
+            layout="@layout/detail_title" />
+
+        <include
+            android:id="@+id/search_layout"
+            layout="@layout/layout_search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <HorizontalScrollView
+            android:background="@color/bg_white"
+            android:id="@+id/depart_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/depart_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/margin_normal"
+                android:paddingRight="@dimen/margin_normal" />
+        </HorizontalScrollView>
+    </LinearLayout>
+
+      <FrameLayout
+        android:id="@+id/contacts_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_layout"
+        android:background="@color/bg_color"
+        android:paddingTop="@dimen/margin_small" />
+
+</RelativeLayout>

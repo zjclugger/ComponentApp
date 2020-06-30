@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp">
+
+    <ImageView
+        android:id="@+id/iv_contacts_more"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:paddingLeft="@dimen/margin_smallest"
+        android:paddingRight="@dimen/margin_smallest"
+        android:src="@mipmap/ic_arrow_right" />
+
+    <CheckBox
+        android:id="@+id/chk_dept_name"
+        style="@style/ContactsCheckboxStyle" />
+
+    <TextView
+        android:id="@+id/dept_name_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@id/iv_contacts_more"
+        android:layout_toRightOf="@id/chk_dept_name"
+        android:gravity="center_vertical"
+        android:paddingRight="@dimen/margin_smallest"
+        android:text="文本"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_small" />
+
+    <View
+        style="@style/LinePortal"
+        android:layout_alignLeft="@id/dept_name_view"
+        android:layout_alignParentBottom="true"
+        android:background="@color/light_gray" />
+
+</RelativeLayout>

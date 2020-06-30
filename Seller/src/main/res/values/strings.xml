@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">EShop 卖家版</string>
+    <string name="copyright">西安麦特赛尔软件技术有限公司 版权所有</string>
+    <string name="sub_system_hr">HR系统</string>
+    <string name="goods_on_shelves">热卖中</string>
+    <string name="goods_off_shelves">已下架</string>
+    <string name="shop_name">门店名称</string>
+    <string name="shop_category">经营品类</string>
+    <string name="shop_phone">餐厅电话</string>
+    <string name="shop_address">餐厅地址</string>
+    <string name="shop_qualification">营业资质</string>
+    <string name="shop_status">营业状态</string>
+    <string name="shop_work_time">营业时间</string>
+    <string name="shop_ad_images">宣传图片</string>
+    <string name="goods_to_shelves">待上架</string>
+</resources>

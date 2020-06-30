@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white">
+
+    <LinearLayout
+        android:id="@+id/center_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_normal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_eshop_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_eshop_buyer" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:text="电商名"
+                android:textSize="@dimen/text_size_page_title" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/margin_small"
+            android:paddingRight="@dimen/margin_small"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@mipmap/ic_arrow_down"
+                    android:gravity="center_vertical"
+                    android:paddingTop="@dimen/margin_small"
+                    android:paddingRight="@dimen/margin_small"
+                    android:paddingBottom="@dimen/margin_small"
+                    android:text="+86"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:background="@color/gray" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_username"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_marginLeft="@dimen/margin_smallest"
+                    app:hintEnabled="false">
+
+                    <EditText
+                        android:id="@+id/et_username"
+                        style="@style/TextInputStyle"
+                        android:background="@drawable/bg_edit_text_no_border"
+                        android:hint="@string/tip_input_account"
+                        android:marqueeRepeatLimit="marquee_forever" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <TextView style="@style/Line" />
+
+            <!-- 没有相应的图片
+                app:passwordToggleDrawable="@drawable/selector_password_show_or_hide"
+                android.support.design:passwordToggleContentDescription 设置为密码输入可见性切换的内容描述的文本。
+                android.support.design:passwordToggleDrawable   可用作密码输入可见度切换图标。
+                android.support.design:passwordToggleEnabled    当EditText有密码时，视图是否显示切换。
+                android.support.design:passwordToggleTint   用于密码输入可见性的图标toggleMay可以是一个颜色值
+                android.support.design:passwordToggleTintMode   混合模式用于应用背景色调。
+             -->
+            <LinearLayout
+                android:id="@+id/user_password_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_marginLeft="0dp"
+                    app:hintEnabled="false"
+                    app:passwordToggleDrawable="@drawable/selector_password_switch"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@drawable/selector_password_switch_color">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edit_text_no_border"
+                        android:drawablePadding="@dimen/margin_small"
+                        android:hint="@string/tip_input_password"
+                        android:inputType="textPassword"
+                        android:paddingTop="@dimen/margin_small"
+                        android:paddingRight="@dimen/margin_small"
+                        android:paddingBottom="@dimen/margin_small"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHighlight="@color/gray"
+                        android:textSize="@dimen/text_size_normal" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/phone_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <com.zjclugger.lib.view.ExtendLabelValueView
+                    android:id="@+id/verification_code_text"
+                    style="@style/LoginEditStyle"
+                    android:layout_marginLeft="-15dp"
+                    android:layout_weight="1"
+                    app:edit_text_hint="@string/tip_input_validation_code" />
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/margin_small"
+                    android:background="@color/gray" />
+
+                <TextView
+                    android:id="@+id/verification_code_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right"
+                    android:paddingTop="@dimen/margin_smallest"
+                    android:paddingBottom="@dimen/margin_smallest"
+                    android:text="获取验证码"
+                    android:textColor="@color/text_selected"
+                    android:textSize="@dimen/text_size_small" />
+            </LinearLayout>
+
+            <TextView style="@style/Line" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_smallest"
+            android:layout_marginTop="@dimen/margin_smallest"
+            android:layout_marginRight="@dimen/margin_smallest">
+
+            <TextView
+                android:id="@+id/tv_login_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:gravity="right"
+                android:padding="@dimen/margin_smallest"
+                android:text="验证码登录"
+                android:textColor="@color/gray" />
+
+            <TextView
+                android:id="@+id/tv_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_login_mode"
+                android:gravity="right"
+                android:padding="@dimen/margin_smallest"
+                android:text="立即注册"
+                android:textColor="@color/blue" />
+
+            <TextView
+                android:id="@+id/tv_forget_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="left"
+                android:padding="@dimen/margin_smallest"
+                android:text="找回密码"
+                android:textColor="@color/text_selected" />
+
+            <TextView
+                android:id="@+id/tv_not_validation_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="right"
+                android:paddingLeft="@dimen/margin_smallest"
+                android:paddingTop="@dimen/margin_smallest"
+                android:paddingBottom="@dimen/margin_smallest"
+                android:text="收不到验证码？"
+                android:textColor="@color/blue"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_password"
+            style="@style/TextInputLayoutStyle"
+            app:errorTextAppearance="@style/TextInputErrorStyle"
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true" />
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_normal"
+            android:background="@drawable/bg_button_orange"
+            android:text="@string/login"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_large" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/recover_password_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_normal"
+        android:visibility="gone">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_normal"
+            android:background="@drawable/bg_button_blue"
+            android:text="邮箱验证"
+            android:textColor="@color/white"
+            android:textSize="@dimen/margin_normal" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_normal"
+            android:background="@drawable/bg_button_blue"
+            android:enabled="false"
+            android:text="手机验证(暂时不支持)"
+            android:textColor="@color/white"
+            android:textSize="@dimen/margin_normal" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/register_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>
+
+    <!--
+    L DPI ( Low Density Screen，120 DPI )，其图标大小为 36 x 36 px
+    M DPI ( Medium Density Screen, 160 DPI )，其图标大小为 48 x 48 px
+    H DPI ( High Density Screen, 240 DPI )，其图标大小为 72 x 72 px
+    XH DPI ( Extra-high density screen, 320 DPI )，其图标大小为 96 x 96 px
+    XXH DPI( xx-high density screen, 480 DPI )，其图标大小为144 x 144 px
+    XXXH DPI( xxx-high density screen, 640 DPI )，其图标大小为192 x 192 px
+    -->

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_white"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <TextView
+        android:id="@+id/line_1"
+        style="@style/Line"
+        android:layout_below="@id/nav_layout" />
+
+    <RelativeLayout
+        android:id="@+id/send_message_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/margin_small"
+        android:minHeight="40dp">
+
+        <TextView
+            android:id="@+id/send_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_button_border_red"
+            android:gravity="center"
+            android:minWidth="50dp"
+            android:padding="@dimen/margin_smallest"
+            android:text="发送"
+            android:textSize="@dimen/text_size_normal" />
+
+        <EditText
+            android:id="@+id/message_edit_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_smallest"
+            android:layout_toLeftOf="@id/send_message"
+            android:background="@drawable/shape_border_gary"
+            android:imeOptions="actionDone"
+            android:inputType="textMultiLine"
+            android:padding="@dimen/margin_smallest"
+            android:lineSpacingExtra="2dp"
+            android:minHeight="30dp"
+            android:scrollbars="vertical"
+            android:textColor="@color/dark_black"
+            android:textSize="@dimen/text_size_normal" />
+    </RelativeLayout>
+
+    <com.zjclugger.lib.view.ExtendsRecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/send_message_layout"
+        android:layout_below="@id/line_1" />
+</RelativeLayout>

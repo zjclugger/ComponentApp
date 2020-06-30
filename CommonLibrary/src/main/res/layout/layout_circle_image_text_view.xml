@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="2dp">
+
+    <RelativeLayout
+        android:layout_alignParentLeft="true"
+        android:id="@+id/citv_left_layout"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/citv_image_layout"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true">
+
+            <com.zjclugger.lib.view.CircleImageView
+                android:id="@+id/citv_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:src="@color/primary_orange"
+                app:civ_background_color="@color/transparent"
+                app:civ_background_stroke_color="@color/transparent"
+                app:civ_background_stroke_width="0dp"
+                app:civ_circle_background_color="@color/transparent"
+                app:civ_text_size="14sp" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/citv_delete"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/ic_delete" />
+
+        <TextView
+            android:layout_marginTop="@dimen/margin_smallest"
+            android:id="@+id/citv_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/citv_image_layout"
+            android:layout_centerHorizontal="true"
+            android:text="文本内容"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@id/citv_left_layout">
+
+        <com.zjclugger.lib.view.CircleImageView
+            android:id="@+id/citv_add"
+            android:layout_width="25dp"
+            android:layout_height="35dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/ic_add"
+            app:civ_background_color="@color/transparent"
+            app:civ_background_stroke_color="@color/transparent"
+            app:civ_background_stroke_width="1dp"
+            app:civ_circle_background_color="@color/transparent" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

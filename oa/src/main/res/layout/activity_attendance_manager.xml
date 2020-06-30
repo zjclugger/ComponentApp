@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_color">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <TextView
+        android:id="@+id/nav_top_line"
+        style="@style/LinePortal"
+        android:layout_below="@id/nav_layout" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/attendance_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        app:itemIconTint="@drawable/selector_light_red"
+        app:itemTextColor="@drawable/selector_light_red"
+        app:menu="@menu/menu_navigation_attendance" />
+
+    <TextView
+        android:id="@+id/nav_bottom_line"
+        style="@style/LinePortal"
+        android:layout_above="@id/attendance_navigation" />
+
+    <RelativeLayout
+        android:id="@+id/content_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/nav_bottom_line"/>
+
+</RelativeLayout>

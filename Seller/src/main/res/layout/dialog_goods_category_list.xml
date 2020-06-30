@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/title_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="分类至（按分类展示商品，方便筛选）"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text_size_large" />
+
+        <ImageView
+            android:id="@+id/title_right_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_normal"
+            android:src="@mipmap/ic_close_gray" />
+    </RelativeLayout>
+
+    <TextView style="@style/Line" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <TextView
+        android:id="@+id/category_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:drawableLeft="@mipmap/ic_add_blue"
+        android:gravity="center_vertical"
+        android:padding="@dimen/margin_smallest"
+        android:text=" 新建分类"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/text_size_normal" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_largest"
+        android:layout_marginRight="@dimen/margin_largest"
+        android:paddingBottom="@dimen/margin_small">
+
+        <TextView
+            android:id="@+id/bottom_category_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:background="@drawable/bg_button_border_red"
+            android:padding="@dimen/margin_small"
+            android:text="删除"
+            android:minWidth="100dp"
+            android:textColor="@color/text_selected"
+            android:textSize="@dimen/text_size_normal" />
+
+        <TextView
+            android:id="@+id/bottom_category_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_button_orange"
+            android:gravity="center"
+            android:minWidth="100dp"
+            android:padding="@dimen/margin_small"
+            android:text="确定"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_normal" />
+
+    </RelativeLayout>
+</LinearLayout>
+

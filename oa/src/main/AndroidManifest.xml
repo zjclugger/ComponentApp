@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zjclugger.oa">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_erp"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_erp"
+        android:supportsRtl="true">
+        <activity android:name=".OaMainActivity">
+            <!--            <intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
+                            <category android:name="android.intent.category.LAUNCHER" />
+                        </intent-filter>-->
+            <intent-filter>
+                <action android:name="com.zjclugger.salary.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.CompanyContactsActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.AttendanceLocationActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.LeaveManagerActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.AttendanceActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- for map -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="1e06df70d298be07dcc3be38bce7ff23" />
+        <service android:name="com.amap.api.location.APSService" />
+    </application>
+</manifest>

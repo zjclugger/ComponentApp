@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/margin_small"
+    android:paddingRight="@dimen/margin_small"
+    android:background="@color/bg_white">
+
+    <TextView
+        android:id="@+id/personal_name_view"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:ellipsize="middle"
+        android:gravity="right"
+        android:paddingRight="@dimen/margin_smallest"
+        android:textSize="@dimen/text_size_small" />
+
+    <TextView
+        android:id="@+id/personal_percentage"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="right"
+        android:text="100.00%"
+        android:textSize="@dimen/text_size_small" />
+
+    <com.warkiz.widget.IndicatorStayLayout
+        android:id="@+id/personal_indicator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/personal_percentage"
+        android:layout_toRightOf="@+id/personal_name_view">
+
+        <com.warkiz.widget.IndicatorSeekBar
+            android:id="@+id/personal_seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/margin_smallest"
+            android:paddingRight="@dimen/margin_smallest"
+            app:isb_clear_default_padding="true"
+            app:isb_indicator_content_layout="@layout/indicator_reimbursement"
+            app:isb_indicator_text_color="@color/primary_blue"
+            app:isb_show_indicator="custom"
+            app:isb_show_tick_texts="true"
+            app:isb_thumb_color="@android:color/transparent"
+            app:isb_track_background_color="@color/light_gray"
+            app:isb_track_background_size="3dp"
+            app:isb_track_progress_color="@color/primary_blue"
+            app:isb_track_progress_size="3dp"
+            app:isb_user_seekable="false" />
+
+    </com.warkiz.widget.IndicatorStayLayout>
+
+</RelativeLayout>
+

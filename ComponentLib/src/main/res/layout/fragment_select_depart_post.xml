@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    android:orientation="vertical"
+    android:paddingBottom="30dp">
+
+    <com.zjclugger.lib.view.JSearchView
+        android:id="@+id/depart_search_view"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginRight="@dimen/margin_small" />
+
+    <TextView style="@style/Line" />
+
+    <RelativeLayout
+        android:id="@+id/depart_all_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/left_layout"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/ic_tree_all" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/depart_post_all"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/left_layout"
+            android:gravity="center_vertical"
+            android:text="不限部门"
+            android:textSize="@dimen/text_size_small" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/lighter_gray" />
+
+    <ListView
+        android:id="@+id/depart_post_list_view"
+        style="@style/ListViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

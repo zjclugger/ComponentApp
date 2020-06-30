@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    android:descendantFocusability="afterDescendants"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <TextView
+        android:id="@+id/line_1"
+        style="@style/Line"
+        android:layout_below="@id/nav_layout" />
+
+    <LinearLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_1"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/margin_normal"
+        android:paddingBottom="@dimen/margin_normal"
+        android:paddingRight="@dimen/margin_normal">
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/elvv_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="-5dp"
+            app:edit_text_visibility="GONE"
+            app:label_text="收货地址："
+            app:label_text_size="@dimen/text_size_normal"
+            app:left_image_height="25dp"
+            app:left_image_src="@mipmap/ic_attendance_sign_small"
+            app:left_image_width="25dp"
+            app:middle_text="张三  86-15899998888"
+            app:middle_text_color="@color/gray"
+            app:middle_text_gravity="left"
+            app:middle_text_size="@dimen/text_size_normal"
+            app:middle_text_weight="1"
+            app:value_text="@string/text_modify"
+            app:value_text_color="@color/text_selected"
+            app:value_text_gravity="right"
+            app:value_text_size="@dimen/text_size_large" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/lvv_address_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            app:label_text="山东省青岛市市北区抚顺路988号福彩天天乐大厦16层201室"
+            app:label_text_color="@color/darker_gray"
+            app:label_text_size="@dimen/text_size_normal" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/line_2"
+        style="@style/Line"
+        android:layout_below="@id/header_layout" />
+
+    <RelativeLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="@dimen/margin_larger"
+        android:paddingRight="@dimen/margin_larger">
+
+        <TextView
+            android:id="@+id/bottom_pay_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_button_yellow"
+            android:paddingLeft="@dimen/margin_larger"
+            android:paddingTop="@dimen/margin_small"
+            android:paddingRight="@dimen/margin_larger"
+            android:paddingBottom="@dimen/margin_small"
+            android:text="确认支付"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_normal" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/bottom_pay_amount"
+            style="@style/OrderDetailItemStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="0dp"
+            android:layout_toLeftOf="@id/bottom_pay_button"
+            app:label_text="实付金额："
+            app:label_text_size="@dimen/text_size_large"
+            app:value_text="125.08"
+            app:value_text_gravity="left" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/line_3"
+        style="@style/Line"
+        android:layout_above="@id/bottom_layout" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/line_3"
+        android:layout_below="@id/line_2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/margin_normal"
+            android:orientation="vertical">
+
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_smallest"
+                app:srlEnableAutoLoadMore="false"
+                app:srlEnableLoadMore="true"
+                app:srlPrimaryColor="@android:color/transparent">
+
+                <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                    android:id="@+id/extend_refresh_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.zjclugger.lib.view.NestedExpandableListView
+                    android:id="@+id/expand_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:cacheColorHint="@color/transparent"
+                    android:childDivider="@null"
+                    android:divider="@null" />
+
+                <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+            <TextView
+                android:id="@+id/empty_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="没有数据"
+                android:visibility="gone" />
+
+            <TextView
+                style="@style/Line"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small" />
+
+            <com.zjclugger.lib.view.LabelValueView
+                android:id="@+id/lvv_total_price"
+                style="@style/OrderDetailItemStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:label_text="商品总额："
+                app:value_text="125.08" />
+
+            <com.zjclugger.lib.view.LabelValueView
+                android:id="@+id/lvv_tax"
+                style="@style/OrderDetailItemStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:label_text="税："
+                app:value_text="-0.0" />
+
+            <com.zjclugger.lib.view.LabelValueView
+                android:id="@+id/lvv_pay_amount"
+                style="@style/OrderDetailItemStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:label_text="实付金额："
+                app:value_text="125.08" />
+
+            <TextView
+                style="@style/Line"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small" />
+
+            <com.zjclugger.lib.view.ExtendLabelValueView
+                android:id="@+id/elvv_pay_mode"
+                style="@style/OrderDetailItemStyle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:label_text="支付方式："
+                app:value_text="支付宝"
+                android:paddingLeft="-5dp"
+                app:right_image_src="@mipmap/ic_arrow_right" />
+
+            <com.zjclugger.lib.view.ExtendLabelValueView
+                android:id="@+id/elvv_phone"
+                style="@style/OrderDetailItemStyle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:label_text="预留电话："
+                app:value_text="15866668888"
+                android:paddingLeft="-5dp"
+                app:right_image_src="@mipmap/ic_arrow_right" />
+
+            <TextView
+                style="@style/Line"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small" />
+
+            <com.zjclugger.lib.view.LabelEditTextView
+            android:id="@+id/order_remark_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            app:label_text="备注信息："
+            app:label_text_size="@dimen/text_size_normal"
+            app:layout_orientation="VERTICAL"
+            app:value_text_color="@color/dark_gray"
+            app:value_text_corner_radius="1dp"
+            app:value_text_size="@dimen/text_size_normal"
+            app:value_text_height="80dp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

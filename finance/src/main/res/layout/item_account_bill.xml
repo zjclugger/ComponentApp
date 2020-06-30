@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_white"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/margin_largest"
+    android:paddingTop="@dimen/margin_smallest"
+    android:paddingRight="@dimen/margin_largest"
+    android:paddingBottom="@dimen/margin_smallest">
+
+    <TextView
+        android:id="@+id/tv_account_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_smallest"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/margin_smallest"
+        android:paddingRight="@dimen/margin_smallest">
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/lvv_account_datetime"
+            style="@style/billItem.LabelValueViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            app:label_text="@string/account_datetime"
+            app:value_text="2019-07-22" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/lvv_account_phase"
+            style="@style/billItem.LabelValueViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            app:value_text_gravity="right" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/margin_smallest"
+        android:paddingTop="2dp"
+        android:paddingRight="@dimen/margin_smallest"
+        android:paddingBottom="2dp">
+
+        <TextView
+            android:id="@+id/label_account_debtor"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="@string/account_debtor"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:id="@+id/value_account_debtor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/label_account_debtor"
+            android:text="200.25"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:id="@+id/value_account_lender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="201.25"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:id="@+id/label_account_lender"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/value_account_lender"
+            android:text="@string/account_lender"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small" />
+    </RelativeLayout>
+</LinearLayout>

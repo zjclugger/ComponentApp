@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">EShop Buyer</string>
+
+    <!--login-->
+    <string name="copyright">西安麦特赛尔软件技术有限公司 版权所有</string>
+    <!--erp portal-->
+    <string name="sub_system_hr">HR System</string>
+    <!-- buyer -->
+    <string name="menu_home">首页</string>
+    <string name="menu_order">订单</string>
+    <string name="menu_shopping_cart">购物车</string>
+    <string name="menu_my">我的</string>
+    <string name="month_volume">月售&#160;%1$d</string>
+    <string name="no_buy_any_goods">未选购商品</string>
+    <string name="goods_detail">商品详情</string>
+    <string name="goods_detail_sku_quantity">购买数量</string>
+    <string name="goods_detail_sku_confirm">确定</string>
+    <string name="goods_detail_sku_recommend_price">价格：¥%1$s/%2$s</string>
+    <string name="goods_detail_sku_stock">(库存:%1$s)</string>
+    <string name="goods_detail_sku_quantity_over">购买数量超出最大库存，请修改购买数量</string>
+    <string name="goods_detail_sku_quantity_empty">购买数量不能为空</string>
+    <string name="goods_detail_sku_add_succeed">商品添加成功，请前往进货单查看</string>
+    <string name="go_settlement">去结算</string>
+</resources>

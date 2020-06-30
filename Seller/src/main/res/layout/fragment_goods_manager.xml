@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.zjclugger.lib.utils.CommonUtils" />
+
+        <variable
+            name="Goods"
+            type="com.zjclugger.seller.webapi.response.GoodsResult" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_white">
+
+        <include
+            android:id="@+id/nav_title_layout"
+            layout="@layout/detail_title" />
+
+        <TextView
+            android:id="@+id/line_1"
+            style="@style/Line"
+            android:layout_below="@id/nav_title_layout" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/line_1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_white"
+                android:orientation="vertical">
+
+                <com.zjclugger.lib.view.ExtendLabelValueView
+                    android:id="@+id/letv_goods_name"
+                    style="@style/GoodsEditStyle"
+                    app:editText="@={Goods.name}"
+                    app:label_text="商品名称"
+                    app:left_image_src="@mipmap/ic_start_red" />
+
+                <TextView style="@style/Line" />
+
+                <!--
+                <item name="right_image_src">@mipmap/ic_arrow_right</item>
+                <TextView
+                        style="@style/OriginalDetailItem"
+                        android:text='@{@string/bill_amount_total+Original.totalSmall}' />-->
+                <com.zjclugger.lib.view.ExtendLabelValueView
+                    android:id="@+id/elvv_goods_category"
+                    style="@style/GoodsEditStyle"
+                    app:edit_text_border_color="@color/transparent"
+                    app:label_text="商品分类"
+                    app:left_image_src="@mipmap/ic_start_red"
+                    app:right_image_src="@mipmap/ic_arrow_right" />
+
+                <TextView style="@style/Line" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/margin_normal"
+                    android:paddingRight="@dimen/margin_normal">
+
+                    <TextView
+                        android:id="@+id/image_header_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:paddingLeft="3dp"
+                        android:paddingTop="@dimen/margin_small"
+                        android:paddingBottom="@dimen/margin_small"
+                        android:text="上传图片"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <FrameLayout
+                        android:id="@+id/picture_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/image_header_view"
+                        android:layout_alignParentBottom="true" />
+                </RelativeLayout>
+
+                <TextView style="@style/Line" />
+
+                <com.zjclugger.lib.view.ExtendLabelValueView
+                    android:id="@+id/letv_goods_description"
+                    style="@style/GoodsEditStyle"
+                    android:layout_marginLeft="@dimen/margin_smallest"
+                    app:editText="@={Goods.description}"
+                    app:edit_text_height="80dp"
+                    app:label_text="描述" />
+
+                <TextView style="@style/Line" />
+
+                <com.zjclugger.lib.view.ExtendLabelValueView
+                    android:id="@+id/letv_goods_price"
+                    style="@style/GoodsEditStyle"
+                    android:layout_marginLeft="@dimen/margin_smallest"
+                    app:editText="@={Goods.convertDoubleToString(Goods.price)}"
+                    app:label_text="价格" />
+
+                <TextView style="@style/Line" />
+
+                <com.zjclugger.lib.view.ExtendLabelValueView
+                    android:id="@+id/letv_goods_stock"
+                    style="@style/GoodsEditStyle"
+                    android:layout_marginLeft="@dimen/margin_smallest"
+                    app:editText="@={Goods.convertIntToString(Goods.stock)}"
+                    app:label_text="库存" />
+
+                <TextView style="@style/Line" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+</layout>

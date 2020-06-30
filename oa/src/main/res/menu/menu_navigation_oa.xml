@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/oa_work"
+        android:icon="@mipmap/ic_salary_normal"
+        android:title="工作" />
+
+    <item
+        android:id="@+id/oa_contacts"
+        android:icon="@mipmap/ic_roster_normal"
+        android:title="通讯录" />
+
+    <item
+        android:id="@+id/oa_user_center"
+        android:icon="@mipmap/ic_mine_normal"
+        android:title="我的"/>
+</menu>

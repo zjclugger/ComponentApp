@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_white"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <TextView
+        android:id="@+id/line_1"
+        style="@style/Line"
+        android:layout_below="@id/nav_layout" />
+
+    <LinearLayout
+        android:id="@+id/filter_date_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/margin_small"
+        android:paddingTop="@dimen/margin_normal"
+        android:paddingRight="@dimen/margin_small"
+        android:paddingBottom="@dimen/margin_normal">
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/elvv_filter_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:label_text="@string/enter_datetime_select"
+            app:label_text_size="@dimen/text_size_small"
+            app:middle_text_weight="1"
+            app:value_text="@string/text_clean"
+            app:value_text_color="@color/text_selected"
+            app:value_text_gravity="right"
+            app:value_text_size="@dimen/text_size_small"
+            app:value_text_width="40dp" />
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/elvv_start_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line_1"
+            app:label_text="@string/text_start_datetime"
+            app:label_text_size="@dimen/text_size_small"
+            app:middle_text_width="30dp"
+            app:value_text="2019年11月06日"
+            app:value_text_size="@dimen/text_size_small" />
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/elvv_end_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:label_text="@string/enter_datetime"
+            app:label_text_size="@dimen/text_size_small"
+            app:middle_text_width="30dp"
+            app:value_text="2019年11月06日"
+            app:value_text_size="@dimen/text_size_small" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/line_2"
+        style="@style/Line"
+        android:layout_below="@id/filter_date_layout" />
+
+</RelativeLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <TextView
+        android:id="@+id/line_1"
+        style="@style/Line"
+        android:layout_below="@id/nav_layout" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reason_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/margin_normal"
+        android:paddingRight="@dimen/margin_normal"
+        android:paddingBottom="@dimen/margin_larger"
+        android:layout_below="@id/line_1" />
+
+    <TextView
+        style="@style/Line"
+        android:layout_below="@id/reason_recycler_view" />
+
+    <com.zjclugger.lib.view.FloatButtonView
+        android:id="@+id/to_top_view"
+        style="@style/Right.FloatButtonViewStyle"
+        android:visibility="invisible" />
+</RelativeLayout>

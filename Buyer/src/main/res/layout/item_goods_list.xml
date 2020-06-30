@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/bg_white"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_small">
+
+    <ImageView
+        android:id="@+id/image_left"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/img_picture_default" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/margin_small"
+        android:layout_toRightOf="@id/image_left"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_small">
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/shop_goods_name"
+            style="@style/ExtendLabelValueStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:edit_text_visibility="GONE"
+            app:label_text="剁椒鱼头" />
+
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:id="@+id/shop_goods_score"
+            style="@style/Widget.MaterialRatingBar.RatingBar.Indicator.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginRight="@dimen/margin_smallest"
+            android:paddingLeft="2dp"
+            android:rating="2.5"
+            android:visibility="gone"
+            app:mrb_progressTint="@color/primary_orange" />
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/shop_goods_des_month_sale"
+            style="@style/ExtendLabelValueStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:edit_text_visibility="GONE"
+            app:label_text="商品描述~~"
+            app:label_text_color="@color/gray"
+            app:label_text_size="@dimen/text_size_small"
+            app:value_text="@string/month_volume"
+            app:value_text_color="@color/gray"
+            app:value_text_gravity="right"
+            app:value_text_size="@dimen/text_size_small"
+            app:value_text_weight="1" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/shop_goods_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:maxWidth="120dp"
+                android:text="@string/goods_price" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/shop_goods_price"
+                android:gravity="right|center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/shop_goods_subtraction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_smallest"
+                    android:src="@mipmap/ic_subtraction_small" />
+
+                <EditText
+                    android:id="@+id/shop_goods_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxWidth="120dp"
+                    android:minWidth="50dp"
+                    android:paddingLeft="@dimen/margin_small"
+                    android:paddingRight="@dimen/margin_small"
+                    android:text="0"
+                    android:textSize="@dimen/text_size_small" />
+
+                <ImageView
+                    android:id="@+id/shop_goods_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_smallest"
+                    android:src="@mipmap/ic_append_small" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

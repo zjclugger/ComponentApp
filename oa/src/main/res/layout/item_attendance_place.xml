@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_white"
+    android:padding="@dimen/margin_smallest">
+
+    <ImageView
+        android:id="@+id/right_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:padding="@dimen/text_size_small"
+        android:src="@mipmap/ic_del_trash_small" />
+
+    <com.zjclugger.lib.view.LabelValueView
+        android:id="@+id/lvv_list_place"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/margin_smallest"
+        android:layout_toLeftOf="@id/right_view"
+        android:orientation="vertical"
+        app:label_text="中南金石国际广场"
+        app:label_text_color="@color/black"
+        app:label_text_size="@dimen/text_size_small"
+        app:value_text="井冈山路157号"
+        app:value_text_color="@color/light_black"
+        app:value_text_size="@dimen/text_size_small" />
+</RelativeLayout>

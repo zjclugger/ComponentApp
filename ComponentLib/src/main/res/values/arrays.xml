@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 市内交通费-->
+    <string-array name="city_cost">
+        <item>交通费</item>
+        <item>燃油费</item>
+    </string-array>
+
+    <!-- 车辆使用费-->
+    <string-array name="car_cost">
+        <item>保险及审验</item>
+        <item>维修保养费</item>
+    </string-array>
+
+    <!-- 通讯网络-->
+    <string-array name="network_cost">
+        <item>通讯费</item>
+    </string-array>
+
+    <!-- 业务招待费-->
+    <string-array name="business_cost">
+        <item>业务招待费</item>
+        <item>团建聚餐费</item>
+    </string-array>
+
+    <!-- 会务费用-->
+    <string-array name="meeting_cost">
+        <item>会议费</item>
+    </string-array>
+
+    <!-- 差旅费-->
+    <string-array name="travel_cost">
+        <item>交通费用</item>
+        <item>食宿费用</item>
+        <item>差旅补助</item>
+    </string-array>
+
+    <!-- 日常运营费-->
+    <string-array name="daily_cost">
+        <item>报刊杂志费</item>
+        <item>办公物品费</item>
+        <item>文印广告费</item>
+        <item>快递费</item>
+        <item>绿化保洁费</item>
+        <item>茶水糕点费</item>
+        <item>证照费用</item>
+        <item>IT建设费</item>
+        <item>会费</item>
+        <item>招聘费用</item>
+        <item>固定资产采购及维修费</item>
+        <item>培训费</item>
+        <item>采购、维修费用</item>
+        <item>招投标相关</item>
+    </string-array>
+
+    <!-- 物业费-->
+    <string-array name="property_cost">
+        <item>房租</item>
+        <item>水电费</item>
+        <item>物管及杂费</item>
+    </string-array>
+
+    <!-- 其他费用-->
+    <string-array name="others_cost">
+        <item>员工红白喜事慰问费</item>
+        <item>看望祝贺</item>
+        <item>节日慰问</item>
+        <item>其他礼品费用</item>
+    </string-array>
+
+</resources>

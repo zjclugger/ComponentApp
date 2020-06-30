@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="Original"
+            type="com.zjclugger.finance.webapi.entity.response.OriginalDetailResult" />
+
+        <import type="com.zjclugger.lib.utils.CommonUtils" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_color"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/title_bar"
+            layout="@layout/detail_title" />
+
+        <TextView
+            android:id="@+id/line_1"
+            style="@style/Line"
+            android:layout_below="@id/nav_layout" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_white"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/bill_title_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/margin_small"
+                        android:paddingRight="@dimen/margin_small">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:orientation="vertical"
+                            android:padding="@dimen/margin_smallest">
+
+                            <TextView
+                                style="@style/OriginalDetailItem"
+                                android:text='@{@string/bill_name+ ERPUtils.getString(Original.docName)}' />
+
+                            <TextView
+                                style="@style/OriginalDetailItem"
+                                android:text='@{@string/bill_type+ERPUtils.getString(Original.billType)}' />
+
+                            <TextView
+                                style="@style/OriginalDetailItem"
+                                android:text='@{@string/bill_amount+ Original.totalAmount}' />
+
+                            <TextView
+                                style="@style/OriginalDetailItem"
+                                android:text='@{@string/bill_amount_total+Original.totalSmall}' />
+
+                            <TextView
+                                style="@style/OriginalDetailItem"
+                                android:text='@{@string/bill_payee+ERPUtils.getString(Original.payee)}' />
+
+                            <TextView
+                                style="@style/OriginalDetailItem"
+                                android:text='@{@string/bill_drawer+ERPUtils.getString(Original.drawer)}' />
+
+                            <TextView
+                                style="@style/OriginalDetailItem"
+                                android:text='@{@string/bill_review+ERPUtils.getString(Original.review)}' />
+
+                            <TextView
+                                style="@style/OriginalDetailItem"
+                                android:text='@{@string/bill_request_number+ERPUtils.getString(Original.requestNumber)}' />
+
+                            <TextView
+                                style="@style/OriginalDetailItem"
+                                android:text='@{@string/bill_date_time+ERPUtils.getDate(Original.billDate)}' />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.4"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/margin_smallest">
+
+                            <ImageView
+                                android:id="@+id/iv_preview_original"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:scaleType="fitXY"
+                                app:imageUrl="@{Original.url}" />
+
+                            <TextView
+                                android:id="@+id/tv_preview_original"
+                                style="@style/OriginalDetailItem"
+                                android:layout_marginTop="@dimen/margin_smallest"
+                                android:text="@string/view_origianl_pic"
+                                android:textColor="@color/text_selected" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    style="@style/Line.Small"
+                    android:layout_below="@id/nav_layout" />
+
+                <com.zjclugger.lib.view.ExtendLabelValueView
+                    android:id="@+id/title_seller"
+                    style="@style/Blue.PageItemTitleStyle"
+                    app:label_text="@string/bill_sales_info" />
+
+                <LinearLayout
+                    style="@style/OriginalDetailItemLayout"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/OriginalDetailItem"
+                        android:text='@{@string/bill_seller_company+ERPUtils.getString(Original.sellerName)}' />
+
+                    <TextView
+                        style="@style/OriginalDetailItem"
+                        android:text='@{@string/bill_seller_address+ERPUtils.getString(Original.sellerAddress)}' />
+
+                    <TextView
+                        style="@style/OriginalDetailItem"
+                        android:text='@{@string/bill_seller_phone+ERPUtils.getString(Original.sellerPhone)}' />
+
+                    <TextView
+                        style="@style/OriginalDetailItem"
+                        android:text='@{@string/bill_seller_number+ERPUtils.getString(Original.sellerNumber)}' />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/Line.Small"
+                    android:layout_below="@id/nav_layout" />
+
+                <com.zjclugger.lib.view.ExtendLabelValueView
+                    android:id="@+id/title_buyer"
+                    style="@style/Blue.PageItemTitleStyle"
+                    app:label_text="@string/bill_purchase_name" />
+
+                <LinearLayout
+                    style="@style/OriginalDetailItemLayout"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/OriginalDetailItem"
+                        android:text='@{@string/bill_seller_company+ERPUtils.getString(Original.purchaserName)}' />
+
+                    <TextView
+                        style="@style/OriginalDetailItem"
+                        android:text='@{@string/bill_seller_address+ERPUtils.getString(Original.purchaserAddress)}' />
+
+                    <TextView
+                        style="@style/OriginalDetailItem"
+                        android:text='@{@string/bill_seller_phone+ERPUtils.getString(Original.purchaserPhone)}' />
+
+                    <TextView
+                        style="@style/OriginalDetailItem"
+                        android:text='@{@string/bill_seller_number+ERPUtils.getString(Original.purchaserNumber)}' />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/Line.Small"
+                    android:layout_below="@id/nav_layout" />
+
+                <com.zjclugger.lib.view.ExtendLabelValueView
+                    android:id="@+id/title_detail_list"
+                    style="@style/Blue.PageItemTitleStyle"
+                    app:label_text="@string/purchase_sales_info" />
+
+                <LinearLayout
+                    style="@style/OriginalDetailItemLayout"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/original_detail_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/Line.Small"
+                    android:layout_below="@id/nav_layout"
+                    android:layout_marginTop="@dimen/margin_largest" />
+
+                <include
+                    android:id="@+id/layout_button"
+                    layout="@layout/layout_button" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</layout>

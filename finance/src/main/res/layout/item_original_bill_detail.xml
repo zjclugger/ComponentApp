@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.zjclugger.lib.utils.CommonUtils" />
+
+        <variable
+            name="DetailItem"
+            type="com.zjclugger.finance.webapi.entity.response.OriginalServiceInfoResult" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_smallest"
+        android:background="@drawable/shape_border_gary"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_smallest">
+
+        <LinearLayout
+            android:id="@+id/left_detail_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_smallest">
+
+            <TextView
+                style="@style/OriginalDetailItem"
+                android:text='@{@string/service_name+ERPUtils.getString(DetailItem.serviceName)}' />
+
+            <TextView
+                style="@style/OriginalDetailItem"
+                android:text='@{@string/original_specification+ERPUtils.getString(DetailItem.specification)}' />
+
+            <TextView
+                style="@style/OriginalDetailItem"
+                android:text='@{@string/original_unit_price+DetailItem.unitPrice}' />
+
+            <!--&#165;-->
+            <TextView
+                style="@style/OriginalDetailItem"
+                android:text='@{@string/original_tax_amount+DetailItem.taxAmount}' />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_smallest">
+
+            <TextView
+                style="@style/OriginalDetailItem"
+                android:text='@{@string/original_unit+ERPUtils.getString(DetailItem.unit)}' />
+
+            <TextView
+                style="@style/OriginalDetailItem"
+                android:text='@{@string/original_number+DetailItem.number}' />
+
+            <TextView
+                style="@style/OriginalDetailItem"
+                android:text='@{@string/original_rate+ERPUtils.getString(DetailItem.taxRate,"","%","")}' />
+
+            <TextView
+                style="@style/OriginalDetailItem"
+                android:text='@{@string/bill_amount+DetailItem.amount}' />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

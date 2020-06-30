@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="DetailItem"
+            type="com.zjclugger.finance.webapi.entity.response.OriginalServiceInfoResult" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_smallest"
+        android:background="@drawable/shape_border_gary"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_smallest">
+
+        <ImageView
+            android:id="@+id/iv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:padding="@dimen/margin_small"
+            android:src="@mipmap/ic_trash_red_small" />
+
+        <com.zjclugger.lib.view.LabelEditTextView
+            android:id="@+id/letv_service_name"
+            style="@style/OriginalEditStyle"
+            app:label_text="@string/service_name"
+            app:value="@={DetailItem.serviceName}" />
+
+        <com.zjclugger.lib.view.LabelEditTextView
+            android:id="@+id/letv_specification"
+            style="@style/OriginalEditStyle"
+            app:label_text="@string/original_specification"
+            app:value="@={DetailItem.specification}" />
+
+        <com.zjclugger.lib.view.LabelEditTextView
+            android:id="@+id/letv_unit_price"
+            style="@style/OriginalEditStyle"
+            app:label_text="@string/original_unit_price"
+            app:value="@={DetailItem.convertDoubleToString(DetailItem.unitPrice)}" />
+
+        <com.zjclugger.lib.view.LabelEditTextView
+            android:id="@+id/letv_tax_amount"
+            style="@style/OriginalEditStyle"
+            app:label_text="@string/original_tax_amount"
+            app:value="@={DetailItem.convertDoubleToString(DetailItem.taxAmount)}" />
+
+        <com.zjclugger.lib.view.LabelEditTextView
+            android:id="@+id/letv_unit"
+            style="@style/OriginalEditStyle"
+            app:label_text="@string/original_unit"
+            app:value="@={DetailItem.unit}" />
+
+        <com.zjclugger.lib.view.LabelEditTextView
+            android:id="@+id/letv_number"
+            style="@style/OriginalEditStyle"
+            app:label_text="@string/original_number"
+            app:value="@={DetailItem.convertIntToString(DetailItem.number)}" />
+
+        <com.zjclugger.lib.view.LabelEditTextView
+            android:id="@+id/letv_tax_rate"
+            style="@style/OriginalEditStyle"
+            app:label_text="@string/original_rate"
+            app:value="@={DetailItem.taxRate}" />
+
+        <com.zjclugger.lib.view.LabelEditTextView
+            android:id="@+id/letv_amount"
+            style="@style/OriginalEditStyle"
+            app:label_text="@string/bill_amount"
+            app:value="@={DetailItem.convertDoubleToString(DetailItem.amount)}" />
+
+    </LinearLayout>
+
+</layout>

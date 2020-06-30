@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <TextView style="@style/Line" />
+
+    <TextView
+        android:id="@+id/letv_reason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入报销事由"
+        android:background="@drawable/bg_edit_text_black"
+        android:layout_margin="@dimen/margin_small"
+        android:padding="@dimen/margin_smallest"
+        android:textColor="@color/dark_black"
+        android:textSize="@dimen/text_size_small" />
+
+    <TextView style="@style/Line" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:overScrollMode="never" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:overScrollMode="never"
+        android:visibility="gone" />
+
+</LinearLayout>

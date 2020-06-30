@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.zjclugger.lib.utils.CommonUtils" />
+
+        <variable
+            name="ShopInfo"
+            type="com.zjclugger.seller.webapi.response.ShopInfoResult" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_white"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/margin_normal">
+
+        <include
+            android:id="@+id/nav_title"
+            layout="@layout/detail_title" />
+
+        <TextView
+            android:id="@+id/line1"
+            style="@style/Line"
+            android:layout_height="1dp"
+            android:layout_below="@id/nav_title" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.zjclugger.lib.view.ExtendLabelValueView
+                    android:id="@+id/elvv_shop_name"
+                    style="@style/ExtendLabelValueStyle.ProfileItemStyle"
+                    app:label_text="@string/shop_name"
+                    app:valueText="@{ShopInfo.name}"
+                    app:value_text_gravity="right"
+                    app:value_text_weight="1" />
+
+                <TextView style="@style/Line" />
+
+                <com.zjclugger.lib.view.ExtendLabelValueView
+                    android:id="@+id/shop_goods_category"
+                    style="@style/ExtendLabelValueStyle.ProfileItemStyle"
+                    app:label_text="@string/shop_category"
+                    app:valueText="@{ShopInfo.categoryName}"
+                    app:value_text_gravity="right"
+                    app:value_text_weight="1" />
+
+                <TextView style="@style/Line" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:id="@+id/shop_photo_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/item_height_large"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/margin_larger"
+                        android:paddingRight="@dimen/margin_normal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="店铺头像"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_normal" />
+
+                        <com.zjclugger.lib.view.CircleImageView
+                            android:id="@+id/citv_shop_photo"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="@dimen/margin_larger"
+                            android:layout_marginRight="@dimen/margin_smallest"
+                            android:src="@mipmap/image_head"
+                            app:civ_background_color="@color/transparent"
+                            app:civ_background_stroke_color="@color/transparent"
+                            app:civ_background_stroke_width="0dp"
+                            app:civ_circle_background_color="@color/transparent"
+                            app:civ_text_size="@dimen/text_size_normal" />
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@mipmap/ic_arrow_right" />
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:id="@+id/shop_photo_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+                <TextView style="@style/Line" />
+
+                <com.zjclugger.lib.view.ExtendLabelValueView
+                    android:id="@+id/elvv_shop_phone"
+                    style="@style/ExtendLabelValueStyle.ProfileItemStyle"
+                    app:label_text="@string/shop_phone"
+                    app:valueText="@{ShopInfo.phone}"
+                    app:value_text_color="@color/text_gray"
+                    app:value_text_gravity="right"
+                    app:value_text_weight="1" />
+
+                <TextView style="@style/Line" />
+
+                <!-- app:value_text="山东省青岛市市北区抚顺路988号福彩天天乐"-->
+                <com.zjclugger.lib.view.ExtendLabelValueView
+                    android:id="@+id/elvv_shop_address"
+                    style="@style/ExtendLabelValueStyle.ProfileItemStyle"
+                    app:label_text="@string/shop_address"
+                    app:valueText="@{ShopInfo.address}"
+                    app:value_text_color="@color/text_gray"
+                    app:value_text_gravity="right"
+                    app:value_text_weight="1" />
+
+                <TextView style="@style/Line" />
+
+                <com.zjclugger.lib.view.ExtendLabelValueView
+                    android:id="@+id/elvv_shop_qualification"
+                    style="@style/ExtendLabelValueStyle.ProfileItemStyle"
+                    app:label_text="@string/shop_qualification"
+                    app:value_text_color="@color/text_selected"
+                    app:value_text_gravity="right"
+                    app:value_text_weight="1" />
+
+                <FrameLayout
+                    android:id="@+id/qualification_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView style="@style/Line" />
+
+                <com.zjclugger.lib.view.ExtendLabelValueView
+                    android:id="@+id/elvv_shop_status"
+                    style="@style/ExtendLabelValueStyle.ProfileItemStyle"
+                    app:label_text="@string/shop_status"
+                    app:valueText="@{ShopInfo.status}"
+                    app:value_text_color="@color/text_selected"
+                    app:value_text_gravity="right"
+                    app:value_text_weight="1" />
+
+                <TextView style="@style/Line" />
+
+                <LinearLayout
+                    android:id="@+id/second_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.zjclugger.lib.view.ExtendLabelValueView
+                        android:id="@+id/elvv_work_time"
+                        style="@style/ExtendLabelValueStyle.ProfileItemStyle"
+                        app:label_text="@string/shop_work_time"
+                        app:valueText="@{ShopInfo.workTime}"
+                        app:value_text_color="@color/text_gray"
+                        app:value_text_gravity="right"
+                        app:value_text_weight="1" />
+
+                    <TextView style="@style/Line" />
+
+                    <com.zjclugger.lib.view.ExtendLabelValueView
+                        android:id="@+id/elvv_ad"
+                        style="@style/ExtendLabelValueStyle.ProfileItemStyle"
+                        app:label_text="@string/shop_ad_images"
+                        app:value_text_color="@color/text_selected"
+                        app:value_text_gravity="right"
+                        app:value_text_weight="1" />
+
+                    <FrameLayout
+                        android:id="@+id/ad_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView style="@style/Line" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+</layout>

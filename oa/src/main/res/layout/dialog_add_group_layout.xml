@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <include layout="@layout/dialog_header_layout" />
+
+    <LinearLayout
+        android:id="@+id/dialog_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog_content"
+        android:gravity="center"
+        android:minHeight="80dp"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_small">
+
+        <EditText
+            android:id="@+id/et_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入考勤组名"
+            android:textColor="@color/light_black"
+            android:textColorHint="@color/light_gray"
+            android:textSize="@dimen/text_size_small" />
+
+        <EditText
+            android:id="@+id/et_group_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请选择地点"
+            android:textColor="@color/light_black"
+            android:textColorHint="@color/light_gray"
+            android:textSize="@dimen/text_size_small" />
+
+        <EditText
+            android:id="@+id/et_group_member"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请选择人员"
+            android:textColor="@color/light_black"
+            android:textColorHint="@color/light_gray"
+            android:textSize="@dimen/text_size_small" />
+    </LinearLayout>
+
+    <include layout="@layout/dialog_footer_layout" />
+
+</LinearLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    android:descendantFocusability="afterDescendants"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <TextView
+        android:layout_below="@id/nav_layout"
+        android:id="@+id/line1"
+        style="@style/Line" />
+
+    <TextView
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottom_pay_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_yellow"
+        android:padding="@dimen/margin_small"
+        android:gravity="center"
+        android:text="确认支付"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_normal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_pay_button"
+        android:layout_below="@id/line1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:gravity="center"
+            android:text="支付金额"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_large" />
+
+        <TextView
+            android:id="@+id/cashier_amount_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_smallest"
+            android:layout_marginBottom="@dimen/margin_smallest"
+            android:gravity="center"
+            android:text="168"
+            android:textColor="@color/text_selected"
+            android:textSize="@dimen/text_size_large" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/lvv_cashier_goods_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/margin_normal"
+            app:label_text="商品名称："
+            app:label_text_color="@color/darker_gray"
+            app:label_text_size="@dimen/text_size_normal"
+            app:value_text="小超人-飞行衣套装"
+            app:value_text_color="@color/darker_gray"
+            app:value_text_size="@dimen/text_size_normal" />
+
+        <TextView
+            style="@style/Line"
+            android:layout_height="5dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:text="默认支付"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text_size_normal" />
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/elvv_default_pay"
+            style="@style/OrderDetailItemStyle2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_height_large"
+            android:layout_marginLeft="@dimen/margin_normal"
+            android:gravity="center_vertical"
+            app:label_text=" 支付宝"
+            app:left_image_src="@mipmap/ic_alipay_small"
+            app:right_image_src="@mipmap/ic_circle_checkbox_checked" />
+
+        <TextView
+            style="@style/Line"
+            android:layout_height="5dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pay_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_normal"
+            android:layout_marginRight="@dimen/margin_normal"
+            android:layout_marginBottom="@dimen/margin_small" />
+    </LinearLayout>
+
+</RelativeLayout>

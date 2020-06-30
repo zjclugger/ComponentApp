@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_white"
+    android:padding="@dimen/margin_small">
+
+    <ImageView
+        android:id="@+id/bill_image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginRight="@dimen/margin_small"
+        android:scaleType="fitXY"
+        android:src="@mipmap/img_picture_default" />
+
+    <RelativeLayout
+        android:id="@+id/bill_type_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true">
+
+        <TextView
+            android:id="@+id/bill_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:drawablePadding="@dimen/margin_smallest"
+            android:textSize="@dimen/text_size_small" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bill_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/bill_type_layout"
+        android:layout_toRightOf="@id/bill_image">
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/bill_company_name"
+            style="@style/billItem.LabelValueViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="0dp"
+            app:label_text="name" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/bill_amount"
+            style="@style/billItem.LabelValueViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bill_company_name"
+            app:label_text="&#165;" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/bill_upload_date"
+            style="@style/billItem.LabelValueViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bill_amount" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

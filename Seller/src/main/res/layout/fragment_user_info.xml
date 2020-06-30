@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    android:paddingBottom="@dimen/margin_normal">
+
+    <include
+        android:id="@+id/nav_title"
+        layout="@layout/detail_title" />
+
+    <TextView
+        android:id="@+id/line1"
+        style="@style/Line"
+        android:layout_height="1dp"
+        android:layout_below="@id/nav_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/user_name"
+            style="@style/RightArrow.ProfileItemStyle"
+            android:drawableLeft="@mipmap/ic_order_selected"
+            android:text="用户名" />
+
+        <TextView style="@style/Line" />
+
+        <TextView
+            android:id="@+id/user_password"
+            style="@style/RightArrow.ProfileItemStyle"
+            android:drawableLeft="@mipmap/ic_order_selected"
+            android:text="密码" />
+
+        <TextView style="@style/Line" />
+    </LinearLayout>
+</RelativeLayout>
+

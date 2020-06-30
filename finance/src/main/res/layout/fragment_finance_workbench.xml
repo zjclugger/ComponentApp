@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:fitsSystemWindows="true">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/finance_main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/background_all"
+        android:gravity="center"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/workbench"
+            android:textColor="@color/black" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/finance_main_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F5F5F5"
+            android:orientation="vertical">
+
+            <com.zjclugger.lib.view.ExtendLabelValueView
+                android:id="@+id/todo_list_title"
+                style="@style/More.PageItemTitleStyle"
+                app:label_text="@string/notification_message"
+                app:value_text="@string/more" />
+            <!-- 我的待办 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/margin_normal">
+
+                <com.zjclugger.lib.view.ExtendLabelValueView
+                    android:id="@+id/todo_list_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:label_text="19:16"
+                    app:label_text_border_color="@color/primary_orange"
+                    app:label_text_border_width="1dp"
+                    app:label_text_corner_radius="@dimen/radius_larger"
+                    app:label_text_gravity="center"
+                    app:label_text_size="@dimen/text_size_small"
+                    app:label_text_width="60dp"
+                    app:middle_text_width="@dimen/margin_small"
+                    app:value_text="产品部张三提出离职，请审批【张三的离职信】"
+                    app:value_text_size="@dimen/text_size_small" />
+
+                <com.zjclugger.lib.view.ExtendLabelValueView
+                    android:id="@+id/todo_list_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:label_text="19:16"
+                    app:label_text_border_color="@color/blue"
+                    app:label_text_color="@color/white_6"
+                    app:label_text_corner_radius="@dimen/radius_larger"
+                    app:label_text_gravity="center"
+                    app:label_text_size="@dimen/text_size_small"
+                    app:label_text_solid_color="@color/red"
+                    app:label_text_width="60dp"
+                    app:middle_text_width="@dimen/margin_small"
+                    app:value_text="产品部张三提出离职，请审批【张三的离职信】"
+                    app:value_text_size="@dimen/text_size_small" />
+
+            </LinearLayout>
+
+            <com.zjclugger.lib.view.ExtendLabelValueView
+                style="@style/PageItemTitleStyle"
+                android:layout_marginTop="@dimen/margin_small"
+                app:label_text="@string/function_common" />
+
+            <LinearLayout
+                style="@style/SubSystemLayout"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.zjclugger.lib.view.ImageTextView
+                    android:id="@+id/image_text_upload"
+                    style="@style/ImageTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:itv_text="@string/upload_bill"
+                    app:itv_icon_src="@mipmap/ic_original_upload" />
+
+                <com.zjclugger.lib.view.ImageTextView
+                    android:id="@+id/image_text_statistics"
+                    style="@style/ImageTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:itv_text="@string/personal_statistics"
+                    app:itv_icon_src="@mipmap/ic_personal_statistics" />
+
+                <com.zjclugger.lib.view.ImageTextView
+                    android:id="@+id/image_text_bill"
+                    style="@style/ImageTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:itv_text="@string/original_perfect"
+                    app:itv_icon_src="@mipmap/ic_original_perfect" />
+
+            </LinearLayout>
+
+            <com.zjclugger.lib.view.ExtendLabelValueView
+                android:id="@+id/reimbursement_sort_title"
+                style="@style/More.PageItemTitleStyle"
+                app:label_text="@string/reimbursement_sort"
+                app:value_text="@string/more" />
+            <!-- 本月报销排行 -->
+
+            <RelativeLayout
+                android:id="@+id/reimbursement_sort_layout"
+                style="@style/SubSystemLayout">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/reimbursement_sort_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_small" />
+            </RelativeLayout>
+
+            <com.zjclugger.lib.view.ExtendLabelValueView
+                android:id="@+id/reimbursement_percentage_title"
+                style="@style/More.PageItemTitleStyle"
+                app:label_text="@string/reimbursement_percentage"
+                app:value_text="@string/more" />
+
+            <RelativeLayout
+                android:id="@+id/detail_percentage"
+                style="@style/SubSystemLayout"
+                android:layout_width="wrap_content"
+                android:paddingLeft="@dimen/margin_larger"
+                android:paddingRight="@dimen/margin_larger"
+                android:visibility="visible">
+
+                <com.zjclugger.lib.view.CircleProgressView
+                    android:id="@+id/month_percentage_progress"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/margin_small"
+                    app:cpv_circle_color="@color/background_blue"
+                    app:cpv_circle_stroke_width="10dp"
+                    app:cpv_progress_color="@color/foreground_blue"
+                    app:cpv_progress_stroke_width="10dp"
+                    app:cpv_progress_text_size="@dimen/text_size_small"
+                    app:cpv_second_text="@string/month_percentage"
+                    app:cpv_second_text_size="@dimen/text_size_small"
+                    app:cpv_show_progress_text="true" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/month_percentage_progress"
+                    android:orientation="vertical">
+
+                    <com.zjclugger.lib.view.ExtendLabelValueView
+                        android:id="@+id/year_reimbursement"
+                        style="@style/PointItemStyle"
+                        app:label_text="@string/year_reimbursement" />
+
+                    <com.zjclugger.lib.view.ExtendLabelValueView
+                        android:id="@+id/month_reimbursement"
+                        style="@style/PointItemStyle"
+                        app:label_text="@string/month_reimbursement" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <com.zjclugger.lib.view.ExtendLabelValueView
+                android:id="@+id/title_depart_bill_total"
+                style="@style/More.PageItemTitleStyle"
+                app:label_text="@string/depart_month_reimbursement"
+                app:value_text="@string/more" />
+
+            <RelativeLayout
+                android:id="@+id/detail_depart_bill_total"
+                style="@style/SubSystemLayout"
+                android:layout_height="200dp"
+                android:padding="@dimen/margin_normal"
+                android:visibility="visible">
+
+                <com.zjclugger.lib.view.echart.EChartWebView
+                    android:id="@+id/depart_bill_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+
+            <com.zjclugger.lib.view.ExtendLabelValueView
+                android:id="@+id/title_reason_bill_total"
+                style="@style/More.PageItemTitleStyle"
+                app:label_text="@string/reason_month_reimbursement"
+                app:value_text="@string/more" />
+
+            <RelativeLayout
+                android:id="@+id/detail_reason_bill_total"
+                style="@style/SubSystemLayout"
+                android:layout_height="200dp"
+                android:padding="@dimen/margin_normal"
+                android:visibility="visible">
+
+                <com.zjclugger.lib.view.echart.EChartWebView
+                    android:id="@+id/reason_bill_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

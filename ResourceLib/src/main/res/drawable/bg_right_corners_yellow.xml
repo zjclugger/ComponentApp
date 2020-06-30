@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/dark_yellow"  />
+            <stroke android:width="1dp" android:color="@color/dark_yellow"  />
+            <corners android:bottomRightRadius="@dimen/radius_largest" android:topRightRadius="@dimen/radius_largest" />
+        </shape>
+    </item>
+    <!--<item android:state_selected="true" android:drawable="@mipmap/ic_radio_button_checked"></item>-->
+    <!--<item android:state_pressed="true" android:drawable="@mipmap/ic_radio_button_checked"></item>-->
+    <item android:state_checked="false">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/dark_yellow"  />
+            <stroke android:width="1dp" android:color="@color/dark_yellow" />
+            <corners android:bottomRightRadius="@dimen/radius_largest" android:topRightRadius="@dimen/radius_largest" />
+        </shape>
+    </item>
+</selector>

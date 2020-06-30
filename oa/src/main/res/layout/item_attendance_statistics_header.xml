@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_white"
+    android:padding="@dimen/margin_small">
+
+    <ImageView
+        android:layout_alignParentRight="true"
+        android:id="@+id/iv_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:layout_gravity="center_vertical"
+        android:src="@mipmap/ic_arrow_down_normal"/>
+
+    <com.zjclugger.lib.view.LabelValueView
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/iv_indicator"
+        android:id="@+id/lvv_attendance_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="ltr"
+        android:orientation="horizontal"
+        app:label_text="Label"
+        app:label_text_color="@color/black"
+        app:label_text_size="@dimen/text_size_small"
+        app:value_text="Value"
+        app:value_text_color="@color/primary_gray"
+        app:value_text_gravity="right"
+        app:value_text_size="@dimen/text_size_small" />
+
+</RelativeLayout>

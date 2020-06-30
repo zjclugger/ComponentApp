@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white">
+
+    <ImageView
+        android:id="@+id/iv_add_cart_anim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_order_selected"
+        android:visibility="invisible" />
+
+    <View
+        android:id="@+id/bottom_line"
+        style="@style/Line"
+        android:layout_above="@id/goods_shop_cart_layout" />
+
+    <include
+        android:id="@+id/goods_shop_cart_layout"
+        layout="@layout/layout_goods_info_shop_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+    <ScrollView
+        android:id="@+id/goods_info_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_line">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/alpa_background"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_white"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/margin_small"
+                android:paddingTop="@dimen/margin_smallest"
+                android:paddingRight="@dimen/margin_small">
+
+                <com.youth.banner.Banner
+                    android:id="@+id/goods_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp" />
+
+                <TextView
+                    android:id="@+id/goods_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_smallest"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="Letv/乐视LETV体感-超级枪王 乐视TV超级电视产品玩具体感游戏枪 电玩道具黑色"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:layout_marginBottom="@dimen/margin_normal"
+                    android:gravity="bottom"
+                    android:minHeight="25dp"
+                    android:orientation="horizontal"
+                    android:paddingRight="@dimen/margin_normal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="￥"
+                        android:textColor="#ec0f38"
+                        android:textSize="@dimen/text_size_normal"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_new_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_smallest"
+                        android:text="599"
+                        android:textColor="@color/text_selected"
+                        android:textSize="@dimen/text_size_larger"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_old_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:gravity="center_vertical"
+                        android:text="￥799"
+                        android:textColor="@color/text_gray"
+                        android:textSize="@dimen/text_size_small" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                style="@style/Line"
+                android:layout_height="5dp" />
+
+            <!-- 当前已选的商品 -->
+            <com.zjclugger.lib.view.ExtendLabelValueView
+                android:id="@+id/elvv_choose_sku"
+                style="@style/ExtendLabelValueStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_white"
+                android:paddingLeft="@dimen/margin_small"
+                android:paddingTop="@dimen/margin_smallest"
+                android:paddingBottom="@dimen/margin_smallest"
+                app:edit_text_visibility="GONE"
+                app:label_text="选择"
+                app:label_text_color="@color/gray"
+                app:label_text_gravity="right"
+                app:middle_text_width="@dimen/margin_normal"
+                app:right_image_height="40dp"
+                app:right_image_src="@mipmap/ic_arrow_right"
+                app:right_image_width="30dp"
+                app:value_text="请选择分类"
+                app:value_text_color="@color/gray"
+                app:value_text_weight="1" />
+
+            <com.wuhenzhizao.sku.widget.FlowLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/margin_larger"
+                android:paddingRight="@dimen/margin_larger"
+                app:flow="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_smallest"
+                    android:padding="@dimen/margin_smallest"
+                    android:text="颜色" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_smallest"
+                    android:padding="@dimen/margin_smallest"
+                    android:text="尺码" />
+            </com.wuhenzhizao.sku.widget.FlowLayout>
+
+            <View
+                style="@style/Line"
+                android:layout_height="5dp" />
+
+            <!-- 商品保障图 -->
+            <ImageView
+                android:id="@+id/iv_ensure"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#ffffff"
+                android:src="@mipmap/img_goods_ensure" />
+
+            <!-- 用户点评 -->
+            <View
+                style="@style/Line"
+                android:layout_height="5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/margin_small"
+                android:paddingRight="@dimen/margin_small">
+
+                <com.zjclugger.lib.view.ExtendLabelValueView
+                    style="@style/ExtendLabelValueStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    app:edit_text_visibility="GONE"
+                    app:label_text="用户点评"
+                    app:middle_text_visibility="GONE"
+                    app:value_text="(0)" />
+
+                <com.zjclugger.lib.view.ExtendLabelValueView
+                    android:id="@+id/elvv_comment_view"
+                    style="@style/ExtendLabelValueStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    app:edit_text_visibility="GONE"
+                    app:label_text="好评度"
+                    app:label_text_gravity="right"
+                    app:label_text_weight="1"
+                    app:middle_text_visibility="GONE"
+                    app:right_image_src="@mipmap/ic_arrow_right"
+                    app:value_text="100%"
+                    app:value_text_color="@color/red"
+                    app:value_text_gravity="right"
+                    app:value_text_width="40dp" />
+            </LinearLayout>
+
+            <View style="@style/Line" />
+
+            <LinearLayout
+                android:id="@+id/ll_empty_comment"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="暂无精华评论"
+                    android:textColor="#888888"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <!-- 小二推荐 -->
+            <LinearLayout
+                android:id="@+id/ll_recommend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_smallest"
+                android:background="#ffffff"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/margin_small"
+                android:paddingRight="@dimen/margin_small">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/margin_small"
+                    android:paddingBottom="@dimen/margin_small"
+                    android:text="小二推荐"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <!--  <com.bigkoo.convenientbanner.ConvenientBanner xmlns:app="http://schemas.android.com/apk/res-auto"
+                      android:id="@+id/vp_recommend"
+                      android:layout_width="match_parent"
+                      android:layout_height="264dp"
+                      android:background="#ffffff"
+                      app:canLoop="true" />-->
+            </LinearLayout>
+
+            <!-- 上拉查看图文详情 -->
+            <TextView
+                android:id="@+id/open_goods_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/text_size_normal"
+                android:drawableTop="@mipmap/ic_top_gray"
+                android:paddingBottom="@dimen/margin_small"
+                android:text="查看图文详情"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_larger" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_to_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="30dp"
+                android:src="@mipmap/ic_go_top"
+                app:backgroundTint="#ffffff"
+                app:borderWidth="0dp"
+                app:fabSize="mini"
+                app:rippleColor="#ffffff" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

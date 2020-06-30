@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_media_layout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_height_large"
+    android:background="@color/bg_white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <com.zjclugger.lib.view.ExtendLabelValueView
+        android:id="@+id/elvv_shop_qualification"
+        style="@style/ExtendLabelValueStyle.ProfileItemStyle"
+        app:label_text="@string/shop_qualification"
+        app:value_text_color="@color/text_selected"
+        app:value_text_gravity="right"
+        app:value_text_weight="1" />
+</LinearLayout>
+

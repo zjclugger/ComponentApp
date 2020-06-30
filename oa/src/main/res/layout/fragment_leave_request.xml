@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_color">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <LinearLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/request_button"
+            style="@style/Orange.ButtonStyle"
+            android:text="提交" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_layout"
+        android:layout_below="@id/nav_layout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.zjclugger.lib.view.ExtendLabelValueView
+                android:id="@+id/leave_request_type"
+                style="@style/Image.LeaveExtendLabelViewTextStyle"
+                android:layout_marginTop="@dimen/margin_small"
+                app:label_text="请假类型"
+                app:value_text="事假" />
+
+            <com.zjclugger.lib.view.LabelValueView
+                android:id="@+id/leave_balance"
+                style="@style/LeaveLabelValue"
+                app:label_text="假期余额："
+                app:label_text_gravity="left"
+                app:value_text="0.5小时"
+                app:value_text_gravity="right" />
+
+            <com.zjclugger.lib.view.ExtendLabelValueView
+                android:id="@+id/leave_start_datetime"
+                style="@style/Image.LeaveExtendLabelViewTextStyle"
+                android:layout_alignParentStart="true"
+                app:label_text="开始时间"
+                app:value_text="2019-08-28 15:30" />
+
+            <com.zjclugger.lib.view.ExtendLabelValueView
+                android:id="@+id/leave_end_datetime"
+                style="@style/Image.LeaveExtendLabelViewTextStyle"
+                android:layout_marginTop="1dp"
+                app:label_text="结束时间"
+                app:value_text="2019-08-28 18:00" />
+
+            <com.zjclugger.lib.view.ExtendLabelValueView
+                android:id="@+id/leave_time"
+                style="@style/LeftImage.LeaveExtendLabelViewTextStyle"
+                android:layout_marginTop="1dp"
+                app:label_text="时长"
+                app:right_image_src="@null"
+                app:value_text="3.5" />
+
+            <com.zjclugger.lib.view.ExtendLabelValueView
+                android:id="@+id/leave_reason_label"
+                style="@style/LeftImage.LeaveExtendLabelViewTextStyle"
+                android:layout_marginTop="@dimen/margin_small"
+                app:label_text="请假事由" />
+
+            <EditText
+                android:id="@+id/leave_reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_white"
+                android:gravity="left"
+                android:hint="请输入请假事由"
+                android:inputType="textMultiLine"
+                android:minLines="5"
+                android:padding="@dimen/padding_smallest"
+                android:textColorHint="@color/light_gray"
+                android:textSize="12sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@color/bg_white">
+
+                <TextView
+                    android:id="@+id/image_header_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:padding="@dimen/margin_small"
+                    android:text="图片" />
+
+                <FrameLayout
+                    android:id="@+id/picture_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/image_header_view"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/bg_light_gray" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@color/bg_white"
+                android:paddingBottom="@dimen/margin_smallest">
+
+                <TextView
+                    android:id="@+id/approval_header_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:padding="@dimen/margin_small"
+                    android:text="审批流程" />
+
+                <RelativeLayout
+                    android:id="@+id/approve_manager_layout"
+                    style="@style/ItemApproveStyle"
+                    android:layout_below="@id/approval_header_view">
+
+                    <RelativeLayout
+                        android:id="@+id/circle_layout_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <com.zjclugger.lib.view.CircleImageView
+                            android:id="@+id/process_1"
+                            style="@style/Small.CircleStyle"
+                            android:layout_centerInParent="true"
+                            android:layout_marginRight="@dimen/margin_smallest"
+                            android:src="@color/gray" />
+
+                        <TextView
+                            style="@style/LineVertical"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/process_1"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true" />
+                    </RelativeLayout>
+
+                    <com.zjclugger.lib.view.LabelValueView
+                        android:id="@+id/approval_manager"
+                        style="@style/TextApproveStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_toRightOf="@id/circle_layout_1"
+                        app:label_text="直接主管"
+                        app:value_text="未找到审批人，自动转交给管理员" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/approve_line"
+                    style="@style/Line"
+                    android:layout_below="@id/approve_manager_layout"
+                    android:background="@color/light_gray" />
+
+                <RelativeLayout
+                    style="@style/ItemApproveStyle"
+                    android:layout_below="@id/approve_line">
+
+                    <RelativeLayout
+                        android:id="@+id/circle_layout_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <com.zjclugger.lib.view.CircleImageView
+                            android:id="@+id/process_2"
+                            style="@style/Small.CircleStyle"
+                            android:layout_centerInParent="true"
+                            android:layout_marginRight="@dimen/margin_smallest"
+                            android:src="@color/gray" />
+
+                        <TextView
+                            style="@style/LineVertical"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@id/process_2"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true" />
+                    </RelativeLayout>
+
+                    <com.zjclugger.lib.view.LabelValueView
+                        android:id="@+id/approval_cc"
+                        style="@style/TextApproveStyle"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/margin_smallest"
+                        android:layout_toRightOf="@id/circle_layout_2"
+                        app:label_text="抄送人"
+                        app:value_text="抄送4人" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@id/approval_cc"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <com.zjclugger.lib.view.CircleImageTextView
+                            android:id="@+id/approve_more"
+                            style="@style/CITVApproveStyle"
+                            app:citv_background="@drawable/shape_oval"
+                            app:citv_delete_visibility="GONE"
+                            app:citv_image_src="@mipmap/ic_team"
+                            app:citv_padding="@dimen/margin_smallest"
+                            app:citv_text="查看全部" />
+
+                        <com.zjclugger.lib.view.CircleImageTextView
+                            android:id="@+id/approve_2"
+                            style="@style/CITVApproveStyle" />
+
+                        <com.zjclugger.lib.view.CircleImageTextView
+                            android:id="@+id/approve_add_more"
+                            style="@style/CITVApproveStyle"
+                            app:citv_add_visibility="GONE"
+                            app:citv_delete_visibility="GONE"
+                            app:citv_image_src="@mipmap/ic_add_more"
+                            app:citv_text_visibility="INVISIBLE" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.zjclugger.lib.utils.CommonUtils" />
+
+        <variable
+            name="DetailItem"
+            type="com.zjclugger.finance.webapi.entity.response.AccountDetailListResult" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_smallest"
+        android:background="@color/bg_white"
+        android:padding="@dimen/margin_small">
+
+        <TextView
+            android:id="@+id/index_point_view1"
+            style="@style/AccountPoint.OriginalDetailItem"
+            android:drawableLeft="@mipmap/ic_circle_blue_small"
+            android:gravity="center_vertical"
+            android:text='@{String.valueOf(DetailItem.itemIndex)}'
+            android:textColor="@color/gray" />
+
+        <TextView
+            android:id="@+id/account_no"
+            style="@style/AccountDetail.OriginalDetailItem"
+            android:layout_marginLeft="0dp"
+            android:layout_toRightOf="@id/index_point_view1"
+            android:text='@{@string/account_number+DetailItem.subjectCode}'
+            android:textColor="@color/gray" />
+
+        <TextView
+            android:id="@+id/index_point_view2"
+            style="@style/AccountPoint.OriginalDetailItem"
+            android:layout_below="@id/index_point_view1" />
+
+        <TextView
+            android:id="@+id/account_summary"
+            style="@style/AccountDetail.OriginalDetailItem"
+            android:layout_below="@id/account_no"
+            android:layout_marginLeft="0dp"
+            android:layout_toRightOf="@id/index_point_view2"
+            android:text='@{DetailItem.summary}' />
+
+        <TextView
+            android:id="@+id/account_detail_name"
+            style="@style/AccountDetail.OriginalDetailItem"
+            android:layout_below="@id/account_no"
+            android:layout_alignParentRight="true"
+            android:gravity="right"
+            android:text='@{DetailItem.subjectName}' />
+
+        <TextView
+            android:id="@+id/index_point_view3"
+            style="@style/AccountPoint.OriginalDetailItem"
+            android:layout_below="@id/index_point_view2" />
+
+        <TextView
+            android:id="@+id/borrower_amount"
+            style="@style/AccountDetail.OriginalDetailItem"
+            android:layout_below="@id/account_detail_name"
+            android:layout_marginLeft="0dp"
+            android:layout_toRightOf="@id/index_point_view3"
+            android:text='@{@string/account_debtor_amount+ERPUtils.getDouble(DetailItem.debtor)}' />
+
+        <TextView
+            android:id="@+id/goods_amount"
+            style="@style/AccountDetail.OriginalDetailItem"
+            android:layout_below="@id/account_detail_name"
+            android:layout_alignParentRight="true"
+            android:gravity="right"
+            android:text='@{@string/account_lender_amount+ ERPUtils.getDouble(DetailItem.lender)}' />
+    </RelativeLayout>
+
+</layout>

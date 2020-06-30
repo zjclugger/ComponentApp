@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/fin_menu_manager"
+        android:icon="@mipmap/ic_finance_manage"
+        android:title="@string/finance_manage" />
+
+    <item
+        android:id="@+id/fin_menu_original"
+        android:icon="@mipmap/ic_original_certificate"
+        android:title="@string/original_certificate" />
+
+    <item
+        android:id="@+id/fin_menu_account"
+        android:icon="@mipmap/ic_account_certificate"
+        android:title="@string/account_certificate" />
+
+    <item
+        android:id="@+id/fin_menu_report"
+        android:icon="@mipmap/ic_finance_report"
+        android:title="@string/finance_report" />
+</menu>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    android:descendantFocusability="blocksDescendants"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <TextView
+        android:id="@+id/line_1"
+        style="@style/Line"
+        android:layout_below="@id/nav_layout" />
+
+    <com.zjclugger.lib.view.JSearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height_normal"
+        android:layout_below="@id/line_1" />
+
+    <TextView
+        android:id="@+id/line_2"
+        style="@style/Line"
+        android:layout_below="@id/line_1" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_list_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_layout_height"
+        android:layout_below="@id/line_2"
+        android:background="@color/background_white"
+        app:tabIndicatorColor="@color/text_selected"
+        app:tabIndicatorHeight="2dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/text_selected"
+        app:tabTextColor="@color/black" />
+
+    <TextView
+        android:id="@+id/line_3"
+        style="@style/Line"
+        android:layout_below="@id/tab_list_tabs" />
+
+    <com.zjclugger.lib.view.ExtendsRecyclerView
+        android:id="@+id/order_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/line_3" />
+
+</RelativeLayout>

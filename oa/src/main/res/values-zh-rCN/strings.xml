@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="salary_payable_wages">应发：</string>
+	<string name="salary_real_wages">实发：</string>
+    <string name="settlement_start_time">结算时间(起)：</string>
+	<string name="settlement_end_time">结算时间(止)：</string>
+	<string name="label_performance_salary">绩效工资：</string>
+    <string name="salary_total_payable_wages">总计应发：</string>
+	<string name="salary_total_real_wages">总计实发：</string>
+    <string name="title_payroll_detail">工资详情</string>
+
+	<!-- 发放形式 -->
+	<string name="grant_manual">手动发放</string>
+	<string name="grant_hour">按小时请假</string>
+	<string name="grant_day">按天请假</string>
+	<string name="oa_attendance_sign">考勤打卡</string>
+	<string name="oa_request_leave">请假</string>
+	<string name="oa_cancel_leave">销假</string>
+	<string name="oa_overtime">加班</string>
+	<string name="oa_out">外出</string>
+	<string name="oa_statistics">考勤统计</string>
+</resources>

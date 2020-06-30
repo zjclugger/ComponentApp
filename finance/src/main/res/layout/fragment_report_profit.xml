@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    android:descendantFocusability="blocksDescendants"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <TextView
+        android:id="@+id/line_1"
+        style="@style/Line"
+        android:layout_below="@id/nav_layout" />
+
+    <TextView
+        android:id="@+id/profit_label_date"
+        style="@style/AssetsLabel"
+        android:layout_below="@id/line_1"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:drawablePadding="@dimen/margin_normal"
+        android:text="2020年10月30日" />
+
+    <TextView
+        android:id="@+id/profit_label_currency"
+        style="@style/Right.AssetsLabel"
+        android:text="币种：人民币"
+        android:layout_below="@id/line_1" />
+
+    <TextView
+        android:id="@+id/line_2"
+        style="@style/Line"
+        android:layout_below="@id/profit_label_currency" />
+
+    <com.bin.david.form.core.SmartTable
+        android:id="@+id/profit_table_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/line_2"
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:layout_marginTop="@dimen/margin_smallest"
+        android:layout_marginRight="@dimen/margin_normal"
+        android:layout_marginBottom="@dimen/margin_normal" />
+</RelativeLayout>

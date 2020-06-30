@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_white">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/nav_layout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_white"
+            android:orientation="vertical">
+
+            <com.zjclugger.lib.view.ExtendLabelValueView
+                android:id="@+id/lvv_attendance_group"
+                style="@style/Leave.ExtendLabelViewTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/margin_small"
+                app:label_text="考勤组："
+                app:value_text="考勤组一"
+                app:value_text_color="@color/text_selected" />
+
+            <com.zjclugger.lib.view.ExtendLabelValueView
+                android:id="@+id/llv_attendance_shifts"
+                style="@style/Leave.ExtendLabelViewTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/margin_small"
+                app:label_text="今日班次："
+                app:right_image_src="@mipmap/ic_dropdown_selected"
+                app:value_text="请选择班次"
+                app:value_text_color="@color/text_selected" />
+
+            <RelativeLayout
+                style="@style/ItemApproveStyle"
+                android:layout_height="180dp"
+                android:background="@color/bg_white">
+
+                <RelativeLayout
+                    android:id="@+id/circle_layout_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <com.zjclugger.lib.view.CircleImageTextView
+                        android:id="@+id/citv_sign_on"
+                        style="@style/CITVApproveStyle"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        app:citv_background="@drawable/shape_oval"
+                        app:citv_civ_text="上"
+                        app:citv_civ_text_size="@dimen/text_size_small"
+                        app:citv_delete_visibility="GONE"
+                        app:citv_padding="@dimen/margin_smallest" />
+
+                    <TextView
+                        android:id="@+id/line_sign_on"
+                        style="@style/LineVertical"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/citv_sign_on"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_attendance_shifts_time"
+                    style="@style/PaddingLeftSmallest"
+                    android:layout_toRightOf="@id/circle_layout_1"
+                    android:text="上班时间：8:30"
+                    android:textSize="@dimen/text_size_small" />
+
+                <TextView
+                    android:id="@+id/tv_sign_time"
+                    style="@style/PaddingLeftSmallest"
+                    android:layout_below="@id/tv_attendance_shifts_time"
+                    android:layout_toRightOf="@id/circle_layout_1"
+                    android:paddingTop="@dimen/margin_smallest"
+                    android:paddingBottom="@dimen/margin_smallest"
+                    android:text="打卡时间：08:25"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small" />
+
+                <com.zjclugger.lib.view.ExtendLabelValueView
+                    style="@style/ExtendLabelViewTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_sign_time"
+                    android:layout_toRightOf="@id/circle_layout_1"
+                    app:label_text="中南金石国际广场"
+                    app:label_text_size="@dimen/text_size_small"
+                    app:left_image_src="@mipmap/ic_attendance_sign" />
+
+                <LinearLayout
+                    android:id="@+id/sign_on_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_attendance_shifts_time"
+                    android:layout_toRightOf="@id/circle_layout_1"
+                    android:background="@color/light_green"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="@dimen/text_size_small"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/sign_on_view"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/shape_oval"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="上班打卡"
+                            android:textColor="@color/bg_white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="12:00:03"
+                            android:textColor="@color/bg_white"
+                            android:textSize="@dimen/text_size_small" />
+                    </LinearLayout>
+
+                    <com.zjclugger.lib.view.ExtendLabelValueView
+                        style="@style/ExtendLabelViewTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:label_text="已进入考勤范围中南金石国际..."
+                        app:left_image_src="@mipmap/ic_attendance_sign"
+                        app:value_text="重新定位"
+                        app:value_text_color="@color/text_selected" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                style="@style/ItemApproveStyle"
+                android:layout_height="180dp">
+
+                <com.zjclugger.lib.view.CircleImageTextView
+                    android:id="@+id/citv_sign_off"
+                    style="@style/CITVApproveStyle"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    app:citv_background="@drawable/shape_oval"
+                    app:citv_civ_text="下"
+                    app:citv_civ_text_size="@dimen/text_size_small"
+                    app:citv_delete_visibility="GONE"
+                    app:citv_padding="@dimen/margin_smallest" />
+
+                <TextView
+                    android:id="@+id/tv_shifts_off_time"
+                    style="@style/PaddingLeftSmallest"
+                    android:layout_toRightOf="@id/citv_sign_off"
+                    android:text="下班时间：18:30"
+                    android:textSize="@dimen/text_size_small" />
+
+                <TextView
+                    android:id="@+id/tv_sign_off_time"
+                    style="@style/PaddingLeftSmallest"
+                    android:layout_below="@id/tv_shifts_off_time"
+                    android:layout_toRightOf="@id/citv_sign_off"
+                    android:paddingTop="@dimen/margin_smallest"
+                    android:paddingBottom="@dimen/margin_smallest"
+                    android:text="打卡时间：19:25"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small" />
+
+                <com.zjclugger.lib.view.ExtendLabelValueView
+                    style="@style/ExtendLabelViewTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_sign_off_time"
+                    android:layout_toRightOf="@id/citv_sign_off"
+                    app:label_text="中南金石国际广场"
+                    app:label_text_size="@dimen/text_size_small"
+                    app:left_image_src="@mipmap/ic_attendance_sign" />
+
+                <LinearLayout
+                    android:id="@+id/sign_off_layout"
+                    style="@style/SignLayout"
+                    android:layout_below="@id/tv_shifts_off_time"
+                    android:layout_toRightOf="@id/citv_sign_off"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/sign_off_view"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/shape_oval"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="下班打卡"
+                            android:textColor="@color/bg_white" />
+
+                        <TextClock
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:format24Hour="HH:mm:ss"
+                            android:format12Hour="hh:mm:ss"
+                            android:textStyle="normal"
+                            android:text="12:02:03"
+                            android:textColor="@color/bg_white"
+                            android:textSize="@dimen/text_size_small" />
+
+                    </LinearLayout>
+
+                    <com.zjclugger.lib.view.ExtendLabelValueView
+                        style="@style/ExtendLabelViewTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:label_text_size="@dimen/text_size_small"
+                        app:value_text_size="@dimen/text_size_small"
+                        app:label_text="已进入考勤范围中南金石国际..."
+                        app:left_image_src="@mipmap/ic_attendance_sign"
+                        app:value_text="重新定位"
+                        app:value_text_color="@color/text_selected" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

@@ -1,0 +1,97 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+/*
+* 组件服务、UIRouter、基类、接口、自定义组件、辅助类等，以ERP业务型功能或服务
+* */
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+    buildTypes {
+
+        debug {
+            buildConfigField("String", "URL_BASE", "\"http://apiurl/api/\"")
+            buildConfigField("String", "URL_HR", "\"http://apiurl/api/personnel/\"")
+            buildConfigField("String", "URL_SALARY", "\"http://apiurl/payrollApi/\"")
+            buildConfigField("String", "URL_FINANCE", "\"http://apiurl/api/finance/\"")
+            buildConfigField("String", "URL_SYSTEM", "\"http://apiurl/api/sys/\"")
+        }
+        release {
+            buildConfigField("String", "URL_BASE", "\"http://apiurl/api/\"")
+            buildConfigField("String", "URL_HR", "\"http://apiurl/api/personnel/\"")
+            buildConfigField("String", "URL_SALARY", "\"http://apiurl/\"")
+            buildConfigField("String", "URL_FINANCE", "\"http://apiurl/api/finance/\"")
+            buildConfigField("String", "URL_SYSTEM", "\"http://apiurl/api/sys/\"")
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api project(path: ':ResourceLib')
+    api project(path: ':BasicLib')
+
+    //test
+  /*  testImplementation rootProject.ext.dependencies["junit"]
+    androidTestImplementation rootProject.ext.dependencies["androidxTestRunner"]
+    androidTestImplementation rootProject.ext.dependencies["androidxTestEspresso"]*/
+
+    testImplementation rootProject.ext.dependencies["junit"]
+
+    //Arouter
+    annotationProcessor rootProject.ext.dependencies["arouterCompiler"]
+    //google
+    annotationProcessor rootProject.ext.dependencies["autoService"]
+    //permission
+    annotationProcessor rootProject.ext.dependencies["permissionProcessor"]
+
+    implementation rootProject.ext.dependencies["multidex"]
+
+    implementation rootProject.ext.dependencies["viewpager2"]
+
+    //layout
+    api rootProject.ext.dependencies["AutoSize"]
+
+    api rootProject.ext.dependencies["gson"]
+    api rootProject.ext.dependencies["ECharts"]
+}
+
+publish {
+    repoName = 'maven'  //repo name default is maven
+    userOrg = 'zjclugger'  //bintray username
+    groupId = 'com.zjclugger.lib'  //compile part 1
+    artifactId = 'JLibrary'  //module name compile part 2
+    publishVersion = rootProject.ext.android["versionName"]  //version code,compile part 3
+    desc = 'My project library'
+    website = 'https://github.com/zjclugger/JLibrary' //github
+}

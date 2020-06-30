@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_white"
+    android:padding="@dimen/margin_small">
+
+    <com.zjclugger.lib.view.CircleImageTextView
+        android:id="@+id/citv_request_photo"
+        style="@style/CircleImage.CITVApproveStyle"
+        android:layout_alignParentLeft="true"
+        app:citv_civ_text="名字"
+        app:citv_left_layout_width="WRAP_CONTENT" />
+
+    <TextView
+        android:id="@+id/tv_request_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="2019-09-06" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/tv_request_date"
+        android:layout_toRightOf="@+id/citv_request_photo"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/padding_smallest"
+        android:paddingRight="@dimen/padding_smallest">
+
+        <TextView
+            android:id="@+id/leave_history_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/padding_smallest"
+            android:text="张三丰提交的请假记录"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/llv_request_type"
+            style="@style/TextLeaveRecordStyle"
+            android:gravity="left|center_vertical"
+            app:label_text="请假类型:"
+            app:value_text="事假" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/llv_leave_start"
+            style="@style/TextLeaveRecordStyle"
+            android:gravity="left|center_vertical"
+            app:label_text="张三丰:"
+            app:value_text="一代宗师" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/llv_leave_end"
+            style="@style/TextLeaveRecordStyle"
+            android:gravity="left|center_vertical"
+            app:label_text="张三丰:"
+            app:value_text="一代宗师" />
+
+        <TextView
+            android:id="@+id/llv_request_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="审核通过"
+            android:textColor="@color/light_green"
+            android:textSize="@dimen/text_size_small" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/bg_color"
+    android:layout_height="wrap_content">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <TextView
+        android:id="@+id/line_1"
+        style="@style/Line"
+        android:layout_below="@id/nav_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/line_1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_small">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_smallest"
+            android:gravity="center_horizontal">
+
+            <com.zjclugger.lib.view.LabelValueView
+                android:id="@+id/bill_company_name"
+                style="@style/normal.LabelValueViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:label_text="@string/label_upload_date"
+                app:value_text="2019-07-22" />
+
+            <com.zjclugger.lib.view.LabelValueView
+                android:id="@+id/bill_amount"
+                style="@style/normal.LabelValueViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_normal"
+                app:label_text="@string/label_no"
+                app:value_text="201" />
+
+            <com.zjclugger.lib.view.LabelValueView
+                android:id="@+id/bill_upload_date"
+                style="@style/normal.LabelValueViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_normal"
+                app:label_text="@string/label_bill_image_size"
+                app:value_text="39KB" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/bill_detail_image"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginTop="@dimen/margin_smallest"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/img_boy_default" />
+    </LinearLayout>
+</RelativeLayout>

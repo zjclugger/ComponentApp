@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <LinearLayout
+        android:id="@+id/footer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bg_white"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_small">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/attendance_location_desc_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我的位置"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_smallest"
+                    android:layout_marginRight="@dimen/margin_smallest"
+                    android:text="(考勤范围)"
+                    android:textSize="@dimen/text_size_small" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="反馈定位不准确"
+                    android:textSize="@dimen/text_size_small" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/attendance_location_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/attendance_location_desc_layout"
+                android:background="@drawable/bg_button_orange"
+                android:padding="@dimen/margin_smallest"
+                android:text="正常" />
+
+            <TextView
+                android:id="@+id/attendance_location_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/attendance_location_desc_layout"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_toRightOf="@id/attendance_location_status"
+                android:padding="@dimen/margin_smallest"
+                android:text="正常" />
+        </RelativeLayout>
+
+        <TextView
+            style="@style/LightGrayLinePortal"
+            android:layout_marginTop="@dimen/margin_smallest"
+            android:layout_marginBottom="@dimen/margin_smallest" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_remark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="备注" />
+
+            <ImageView
+                android:id="@+id/tv_location_picture"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/ic_camera_normal" />
+
+            <EditText
+                android:id="@+id/et_remark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_remark"
+                android:layout_toLeftOf="@id/tv_location_picture"
+                android:minLines="2" />
+
+        </RelativeLayout>
+
+        <TextView
+            style="@style/LightGrayLinePortal"
+            android:layout_marginTop="@dimen/margin_smallest"
+            android:layout_marginBottom="@dimen/margin_smallest" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_button_orange"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin_smallest">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="正常打卡"
+                android:textColor="@color/bg_white"
+                android:textSize="@dimen/text_size_small" />
+
+            <TextClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_smallest"
+                android:format12Hour="hh:mm:ss"
+                android:format24Hour="HH:mm:ss"
+                android:text="12:02:03"
+                android:textColor="@color/bg_white"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/attendance_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/footer_layout"
+        android:layout_below="@id/nav_layout" />
+</RelativeLayout>

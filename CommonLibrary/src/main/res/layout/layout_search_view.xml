@@ -1,0 +1,53 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/erp_search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_white"
+        android:padding="@dimen/margin_smallest">
+
+        <ImageView
+            android:id="@+id/erp_search_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/margin_small"
+            android:paddingRight="10dp"
+            android:src="@mipmap/ic_nav_back" />
+
+        <TextView
+            android:id="@+id/erp_search_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_small"
+            android:text="搜索"
+            android:textColor="@color/text_selected"
+            android:textSize="@dimen/text_size_small" />
+
+        <!--android:src="@mipmap/ic_more_filtrate"-->
+        <TextView
+            android:id="@+id/erp_focus_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/erp_search_back"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/erp_search_view"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_toLeftOf="@id/erp_search_right"
+            android:layout_toRightOf="@id/erp_focus_view"
+            android:background="@drawable/shape_search_view"
+            android:imeOptions="actionSearch"
+            app:queryHint="@string/info_input_query" />
+    </RelativeLayout>
+</merge>
+

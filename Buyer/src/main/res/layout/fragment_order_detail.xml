@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    android:descendantFocusability="afterDescendants"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <TextView
+        android:id="@+id/line_1"
+        style="@style/Line"
+        android:layout_below="@id/nav_layout" />
+
+    <LinearLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_1"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/margin_largest"
+        android:paddingRight="@dimen/margin_normal"
+        android:paddingBottom="@dimen/margin_normal">
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/elvv_order_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:edit_text_visibility="GONE"
+            app:label_text="订单状态："
+            app:label_text_size="@dimen/text_size_normal"
+            app:middle_text="待付款"
+            app:middle_text_color="@color/text_selected"
+            app:middle_text_min_width="60dp"
+            app:middle_text_size="@dimen/text_size_normal"
+            app:value_text_color="@color/text_gray"
+            app:value_text_gravity="left"
+            app:value_text_size="@dimen/text_size_small"
+            app:value_text_weight="1" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/lvv_address_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_smallest"
+            app:label_text="收货地址："
+            app:label_text_color="@color/black"
+            app:label_text_size="@dimen/text_size_normal"
+            app:value_text="山东省青岛市市北区抚顺路988号福彩天天乐大厦16层201室"
+            app:value_text_color="@color/text_gray"
+            app:value_text_size="@dimen/text_size_normal" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/line_2"
+        style="@style/Line"
+        android:layout_below="@id/header_layout" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/line_2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_normal">
+
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_smallest"
+                app:srlEnableAutoLoadMore="false"
+                app:srlEnableLoadMore="true"
+                app:srlPrimaryColor="@android:color/transparent">
+
+                <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                    android:id="@+id/extend_refresh_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.zjclugger.lib.view.NestedExpandableListView
+                    android:id="@+id/expand_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:cacheColorHint="@color/transparent"
+                    android:childDivider="@null"
+                    android:divider="@null" />
+
+                <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+            <TextView
+                android:id="@+id/empty_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="没有数据"
+                android:visibility="gone" />
+
+            <TextView
+                style="@style/Line"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small" />
+
+            <com.zjclugger.lib.view.LabelValueView
+                android:id="@+id/lvv_total_price"
+                style="@style/OrderDetailItemStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:label_text="商品总额："
+                app:value_text="125.08" />
+
+            <com.zjclugger.lib.view.LabelValueView
+                android:id="@+id/lvv_tax"
+                style="@style/OrderDetailItemStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:label_text="税："
+                app:value_text="-0.0" />
+
+            <com.zjclugger.lib.view.LabelValueView
+                android:id="@+id/lvv_pay_amount"
+                style="@style/OrderDetailItemStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:label_text="实付金额："
+                app:value_text="125.08" />
+
+            <TextView
+                style="@style/Line"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small" />
+
+            <com.zjclugger.lib.view.ExtendLabelValueView
+                android:id="@+id/elvv_order_no"
+                style="@style/OrderDetailItemStyle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="-5dp"
+                app:label_text="订单编号："
+                app:value_text="0002334564" />
+
+            <com.zjclugger.lib.view.ExtendLabelValueView
+                android:id="@+id/elvv_order_time"
+                style="@style/OrderDetailItemStyle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="-5dp"
+                app:label_text="下单时间："
+                app:value_text="2020.05.09 12:09" />
+
+            <TextView
+                style="@style/Line"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small" />
+
+            <com.zjclugger.lib.view.LabelEditTextView
+                android:id="@+id/order_remark_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                app:label_text="备注信息："
+                app:label_text_size="@dimen/text_size_normal"
+                app:layout_orientation="VERTICAL"
+                app:value_text_color="@color/dark_gray"
+                app:value_text_corner_radius="1dp"
+                app:value_text_height="80dp"
+                app:value_text_size="@dimen/text_size_normal" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

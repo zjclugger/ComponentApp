@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/erp_menu_order"
+        android:icon="@mipmap/ic_contacts"
+        android:title="订单管理" />
+
+    <item
+        android:id="@+id/erp_menu_shop"
+        android:icon="@mipmap/ic_workstation"
+        android:title="门店运营" />
+
+    <item
+        android:id="@+id/erp_menu_my"
+        android:icon="@mipmap/ic_my"
+        android:title="我的" />
+</menu>

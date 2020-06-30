@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_light_gray">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <LinearLayout
+        android:layout_below="@id/nav_layout"
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_small">
+
+        <com.zjclugger.lib.view.CircleImageTextView
+            android:id="@+id/citv_request_photo"
+            style="@style/CircleImage.CITVApproveStyle"
+            android:layout_alignParentLeft="true"
+            app:citv_civ_text="名字"
+            app:citv_left_layout_width="WRAP_CONTENT" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/llv_request_name"
+            style="@style/HeaderDetailStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_smallest"
+            android:gravity="left|center_vertical"
+            android:orientation="vertical"
+            app:label_text="张三丰"
+            app:value_text="审核通过" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/leave_detail_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header_layout"
+        android:background="@color/bg_white"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_small">
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/llv_history_id"
+            style="@style/TextLeaveDetailStyle"
+            android:gravity="left|center_vertical"
+            app:label_text="审批编号"
+            app:value_text="201909061002254685120" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/llv_history_depart"
+            style="@style/TextLeaveDetailStyle"
+            android:gravity="left|center_vertical"
+            app:label_text="所在部门"
+            app:value_text="技术部" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/llv_history_type"
+            style="@style/TextLeaveDetailStyle"
+            android:gravity="left|center_vertical"
+            app:label_text="请假类型"
+            app:value_text="事假" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/llv_history_start_time"
+            style="@style/TextLeaveDetailStyle"
+            android:gravity="left|center_vertical"
+            app:label_text="开始时间"
+            app:value_text="2019-09-06 09:00" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/llv_history_end_time"
+            style="@style/TextLeaveDetailStyle"
+            android:gravity="left|center_vertical"
+            app:label_text="结束时间"
+            app:value_text="2019-09-06 18:00" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/llv_history_duration"
+            style="@style/TextLeaveDetailStyle"
+            android:gravity="left|center_vertical"
+            app:label_text="时长(小时)"
+            app:value_text="8" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/llv_history_reason"
+            style="@style/TextLeaveDetailStyle"
+            android:gravity="left"
+            app:label_text="请假事由"
+            app:value_text="中了双色球一等奖，去领奖金！" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/leave_process_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/leave_detail_layout"
+        android:layout_marginTop="@dimen/margin_small"
+        android:padding="@dimen/margin_small"
+        android:background="@color/bg_white"
+        android:paddingBottom="@dimen/margin_small">
+
+        <RelativeLayout
+            android:id="@+id/history_request_layout"
+            style="@style/ItemApproveStyle"
+            android:layout_height="80dp">
+
+            <RelativeLayout
+                android:id="@+id/circle_layout_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <com.zjclugger.lib.view.CircleImageTextView
+                    android:id="@+id/process_1"
+                    style="@style/CircleImage.CITVApproveStyle"
+                    android:layout_alignParentLeft="true"
+                    app:citv_civ_text="名字"
+                    app:citv_left_layout_width="WRAP_CONTENT" />
+
+                <TextView
+                    style="@style/LineVertical"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/process_1"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_request_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:paddingRight="@dimen/padding_smallest"
+                android:text="2019-09-06" />
+
+            <com.zjclugger.lib.view.LabelValueView
+                android:id="@+id/llv_history_request"
+                style="@style/HeaderDetailStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/tv_request_date"
+                android:layout_toRightOf="@id/circle_layout_1"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_smallest"
+                app:label_text="发起申请"
+                app:value_text="我" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/history_approve_layout"
+            style="@style/ItemApproveStyle"
+            android:layout_height="80dp"
+            android:layout_below="@id/history_request_layout">
+
+            <RelativeLayout
+                android:id="@+id/circle_layout_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <com.zjclugger.lib.view.CircleImageTextView
+                    android:id="@+id/process_2"
+                    style="@style/CircleImage.CITVApproveStyle"
+                    android:layout_alignParentLeft="true"
+                    app:citv_civ_text="名字"
+                    app:citv_left_layout_width="WRAP_CONTENT" />
+
+                <TextView
+                    style="@style/LineVertical"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/process_2"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_request_date2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:paddingRight="@dimen/padding_smallest"
+                android:text="2019-09-06" />
+
+            <com.zjclugger.lib.view.LabelValueView
+                android:id="@+id/llv_history_request2"
+                style="@style/HeaderDetailStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/tv_request_date2"
+                android:layout_toRightOf="@id/circle_layout_2"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_smallest"
+                app:label_text="审核人"
+                app:value_text="觉远大师" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/ItemApproveStyle"
+            android:layout_height="120dp"
+            android:layout_below="@id/history_approve_layout">
+
+            <RelativeLayout
+                android:id="@+id/circle_layout_3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <com.zjclugger.lib.view.CircleImageTextView
+                    android:id="@+id/process_3"
+                    style="@style/CircleImage.CITVApproveStyle"
+                    android:layout_alignParentLeft="true"
+                    app:citv_civ_text="名字"
+                    app:citv_left_layout_width="WRAP_CONTENT" />
+
+                <TextView
+                    style="@style/LineVertical"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/process_3"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+            <com.zjclugger.lib.view.LabelValueView
+                android:id="@+id/approval_cc"
+                style="@style/HeaderDetailStyle"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/circle_layout_3"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_smallest"
+                app:label_text="抄送人"
+                app:label_text_visibility="GONE"
+                app:value_text="抄送4人" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/approval_cc"
+                android:layout_toRightOf="@id/circle_layout_3"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <com.zjclugger.lib.view.CircleImageTextView
+                    android:id="@+id/approve_1"
+                    style="@style/CITVApproveStyle"
+                    app:citv_add_visibility="GONE"
+                    app:citv_text="李0四"
+                    app:citv_civ_text="0四"
+                    app:citv_delete_visibility="GONE" />
+
+                <com.zjclugger.lib.view.CircleImageTextView
+                    android:id="@+id/approve_2"
+                    style="@style/CITVApproveStyle"
+                    app:citv_text="李1四"
+                    app:citv_civ_text="1四"
+                    android:layout_margin="@dimen/margin_smallest"
+                    app:citv_add_visibility="GONE"
+                    app:citv_delete_visibility="GONE" />
+
+                <com.zjclugger.lib.view.CircleImageTextView
+                    android:id="@+id/approve_3"
+                    style="@style/CITVApproveStyle"
+                    app:citv_text="李2四"
+                    app:citv_civ_text="2四"
+                    app:citv_add_visibility="GONE"
+                    app:citv_delete_visibility="GONE" />
+
+                <com.zjclugger.lib.view.CircleImageTextView
+                    android:id="@+id/approve_more"
+                    style="@style/CITVApproveStyle"
+                    android:layout_margin="@dimen/margin_smallest"
+                    app:citv_add_visibility="GONE"
+                    app:citv_background="@drawable/shape_oval"
+                    app:citv_delete_visibility="GONE"
+                    app:citv_image_src="@mipmap/ic_team"
+                    app:citv_padding="@dimen/margin_smallest"
+                    app:citv_text="查看全部" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

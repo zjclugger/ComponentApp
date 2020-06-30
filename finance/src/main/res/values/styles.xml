@@ -1,0 +1,135 @@
+﻿<resources>
+    <!-- 自定义View的样式 -->
+    <style name="OriginalDetailItem">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/dark_black</item>
+    </style>
+
+    <style name="OriginalDetailItemLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/bg_white</item>
+        <item name="android:paddingLeft">@dimen/margin_normal</item>
+        <item name="android:paddingRight">@dimen/margin_normal</item>
+        <item name="android:paddingBottom">@dimen/margin_normal</item>
+    </style>
+
+    <style name="Line.Small" parent="Line">
+        <item name="android:layout_height">5dp</item>
+    </style>
+
+    <style name="Label.OriginalDetailItem" parent="OriginalDetailItem">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Account.OriginalDetailItem" parent="OriginalDetailItem">
+        <item name="android:padding">@dimen/margin_smallest</item>
+    </style>
+
+    <style name="AccountRight.OriginalDetailItem" parent="OriginalDetailItem">
+        <item name="android:padding">@dimen/margin_smallest</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginLeft">@dimen/margin_smallest</item>
+        <item name="android:gravity">right</item>
+    </style>
+
+    <style name="AccountDetail.OriginalDetailItem" parent="OriginalDetailItem">
+        <item name="android:padding">@dimen/margin_smallest</item>
+        <item name="android:layout_marginLeft">@dimen/margin_smallest</item>
+        <item name="android:layout_marginRight">@dimen/margin_smallest</item>
+    </style>
+
+    <style name="AccountPoint.OriginalDetailItem" parent="OriginalDetailItem">
+        <item name="android:paddingTop">@dimen/margin_smallest</item>
+        <item name="android:paddingBottom">@dimen/margin_smallest</item>
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentLeft">true</item>
+    </style>
+
+    <style name="EditStyle">
+        <!-- <item name="android:background">@drawable/bg_corners_border_gary</item>-->
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:paddingLeft">@dimen/margin_smallest</item>
+        <item name="android:paddingRight">@dimen/margin_smallest</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textColor">@color/dark_black</item>
+    </style>
+
+    <style name="OriginalEditStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="label_text_size">@dimen/text_size_small</item>
+        <item name="value_text_size">@dimen/text_size_small</item>
+        <item name="label_text_width">225dp</item>
+    </style>
+
+    <style name="NumberDecimal.EditStyle" parent="EditStyle">
+        <item name="android:inputType">numberDecimal</item>
+    </style>
+
+    <style name="ReportMainItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:layout_marginTop">@dimen/margin_small</item>
+        <item name="android:layout_marginBottom">@dimen/margin_small</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_larger</item>
+    </style>
+
+    <style name="AssetsLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/margin_small</item>
+        <item name="android:paddingBottom">@dimen/margin_small</item>
+        <item name="android:drawableRight">@mipmap/ic_dropdown_normal</item>
+    </style>
+
+    <style name="Right.AssetsLabel" parent="AssetsLabel">
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">@dimen/margin_normal</item>
+        <item name="android:drawableRight">@null</item>
+    </style>
+
+    <style name="ReportTotalLabel">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">0.5dp</item>
+        <item name="android:background">@color/lightest_blue</item>
+        <item name="android:paddingLeft">@dimen/margin_small</item>
+        <item name="android:paddingRight">@dimen/margin_small</item>
+        <item name="android:paddingTop">@dimen/margin_smallest</item>
+        <item name="android:paddingBottom">@dimen/margin_smallest</item>
+        <item name="label_text_color">@color/black</item>
+        <item name="label_text_size">@dimen/text_size_small</item>
+        <item name="value_text_gravity">right</item>
+        <item name="value_text_size">@dimen/text_size_small</item>
+    </style>
+
+    <style name="ReportItemStyle" parent="ReportTotalLabel">
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+    <style name="ReportRecyclerView">
+        <item name="android:layout_margin">0.5dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="ReportLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingLeft">@dimen/margin_normal</item>
+        <item name="android:paddingRight">@dimen/margin_normal</item>
+        <item name="android:layout_marginTop">@dimen/margin_small</item>
+        <item name="android:layout_marginBottom">@dimen/margin_normal</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+</resources>

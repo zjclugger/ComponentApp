@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_height_normal"
+    android:layout_marginLeft="@dimen/margin_smallest"
+    android:layout_marginRight="@dimen/margin_small"
+    android:paddingBottom="@dimen/margin_small">
+
+    <!--    android:layoutDirection="rtl"-->
+    <CheckBox
+        android:id="@+id/choice_view"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/margin_small"
+        android:button="@drawable/bg_multiple_checkbox"
+        android:minWidth="20dp" />
+
+    <RelativeLayout
+        android:id="@+id/goods_detail_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/choice_view">
+
+        <TextView
+            android:id="@+id/category_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="食品类"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text_size_normal" />
+
+        <TextView
+            android:id="@+id/category_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="2334件"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text_size_normal" />
+    </RelativeLayout>
+</RelativeLayout>

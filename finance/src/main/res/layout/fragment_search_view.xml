@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_white"
+    android:fitsSystemWindows="true">
+
+    <com.zjclugger.lib.view.ErpSearchView
+        android:id="@+id/keyword_search_view"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <TextView
+        android:id="@+id/line_1"
+        style="@style/Line"
+        android:layout_below="@id/keyword_search_view" />
+
+    <com.zjclugger.lib.view.ExtendLabelValueView
+        android:layout_margin="@dimen/margin_smallest"
+        android:id="@+id/elvv_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_1"
+        app:right_image_src="@mipmap/ic_trash_gray_small"
+        app:label_text="@string/history_record"
+        app:label_text_size="@dimen/text_size_small" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/keyword_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/elvv_history" />
+
+    <com.zjclugger.lib.view.FloatButtonView
+        android:id="@+id/to_top_view"
+        style="@style/Right.FloatButtonViewStyle"
+        android:visibility="invisible" />
+
+</RelativeLayout>

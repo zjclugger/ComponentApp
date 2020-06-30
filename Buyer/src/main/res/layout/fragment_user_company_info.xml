@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/title_layout"
+        layout="@layout/detail_title" />
+
+    <LinearLayout
+        android:id="@+id/company_logo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="@color/background_all"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/company_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/company_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="公司简称" />
+
+        <TextView
+            android:id="@+id/company_full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="公司全名" />
+    </LinearLayout>
+
+    <TextView style="@style/Line" />
+
+    <TextView
+        android:id="@+id/user_company_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLength="9"
+        android:minLines="9"
+        android:scrollbars="vertical"
+        android:text="公司详情" />
+
+    <com.zjclugger.lib.view.LabelValueView
+        android:id="@+id/company_address"
+        style="@style/normal.LabelValueViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:label_text="公司地址"
+        app:value_text="18" />
+
+    <TextView style="@style/Line" />
+
+    <com.zjclugger.lib.view.LabelValueView
+        android:id="@+id/company_phone"
+        style="@style/normal.LabelValueViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:label_text="公司电话"
+        app:value_text="18" />
+
+    <TextView style="@style/Line" />
+
+
+</LinearLayout>
+

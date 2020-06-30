@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <TextView
+        android:id="@+id/line_1"
+        style="@style/Line"
+        android:layout_below="@id/nav_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_normal">
+
+        <TextView
+            android:id="@+id/label_assets_liabilities"
+            style="@style/ReportMainItem"
+            android:background="@mipmap/bg_report_orange"
+            android:text="@string/report_assets_liabilities" />
+
+        <TextView
+            android:id="@+id/label_profit"
+            style="@style/ReportMainItem"
+            android:background="@mipmap/bg_report_lightest_blue"
+            android:text="@string/report_profit" />
+
+        <TextView
+            android:id="@+id/label_bill_statistics"
+            style="@style/ReportMainItem"
+            android:background="@mipmap/bg_report_orange"
+            android:text="@string/report_bill_statistics" />
+
+        <TextView
+            android:id="@+id/label_personal_statistics"
+            style="@style/ReportMainItem"
+            android:background="@mipmap/bg_report_lightest_blue"
+            android:text="@string/report_personal_statistics" />
+    </LinearLayout>
+
+</RelativeLayout>

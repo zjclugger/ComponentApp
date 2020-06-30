@@ -1,0 +1,56 @@
+if (rootProject.ext.isRunOA) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+    apply plugin: 'com.jakewharton.butterknife'
+}
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+    defaultConfig {
+        if (rootProject.ext.isRunOA) {
+            applicationId "com.zjclugger.oa"
+        }
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+
+        ndk {
+            //����֧�ֵ�SO��ܹ��������߿��Ը�����Ҫ��ѡ��һ������ƽ̨��so��
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86", "arm64-v8a", "x86_64"
+        }
+    }
+
+    packagingOptions {
+        exclude 'assets/*'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':CommonLibrary')
+
+    implementation rootProject.ext.dependencies["butterknife"]
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+
+    annotationProcessor rootProject.ext.dependencies["arouterCompiler"]
+    annotationProcessor rootProject.ext.dependencies["autoService"]
+
+    //for map
+    implementation 'com.amap.api:3dmap:latest.integration'
+    //implementation 'com.amap.api:map2d:latest.integration' //2D map
+    implementation 'com.amap.api:search:latest.integration' //search
+    implementation 'com.amap.api:location:latest.integration'  //location
+}

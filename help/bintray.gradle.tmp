@@ -1,0 +1,242 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'com.novoda.bintray-release'
+/*
+* 组件服务、UIRouter、基类、接口、自定义组件、辅助类等，以ERP业务型功能或服务
+* */
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName "1.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+    buildTypes {
+
+        debug {
+            buildConfigField("String", "URL_BASE", "\"http://apiurl/api/\"")
+            buildConfigField("String", "URL_HR", "\"http://apiurl/api/personnel/\"")
+            buildConfigField("String", "URL_SALARY", "\"http://apiurl/payrollApi/\"")
+            buildConfigField("String", "URL_FINANCE", "\"http://apiurl/api/finance/\"")
+            buildConfigField("String", "URL_SYSTEM", "\"http://apiurl/api/sys/\"")
+        }
+        release {
+            buildConfigField("String", "URL_BASE", "\"http://apiurl/api/\"")
+            buildConfigField("String", "URL_HR", "\"http://apiurl/api/personnel/\"")
+            buildConfigField("String", "URL_SALARY", "\"http://apiurl/\"")
+            buildConfigField("String", "URL_FINANCE", "\"http://apiurl/api/finance/\"")
+            buildConfigField("String", "URL_SYSTEM", "\"http://apiurl/api/sys/\"")
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api project(path: ':ResourceLib')
+    api project(path: ':BasicLib')
+
+    //test
+    /*  testImplementation rootProject.ext.dependencies["junit"]
+      androidTestImplementation rootProject.ext.dependencies["androidxTestRunner"]
+      androidTestImplementation rootProject.ext.dependencies["androidxTestEspresso"]*/
+
+    testImplementation rootProject.ext.dependencies["junit"]
+
+    //Arouter
+    annotationProcessor rootProject.ext.dependencies["arouterCompiler"]
+    //google
+    annotationProcessor rootProject.ext.dependencies["autoService"]
+    //permission
+    annotationProcessor rootProject.ext.dependencies["permissionProcessor"]
+
+    api rootProject.ext.dependencies["multidex"]
+
+    api rootProject.ext.dependencies["viewpager2"]
+
+    //layout
+    api rootProject.ext.dependencies["AutoSize"]
+
+    api rootProject.ext.dependencies["gson"]
+    api rootProject.ext.dependencies["ECharts"]
+}
+
+/*
+publish {
+    //配合这个插件 apply plugin: 'com.novoda.bintray-release'
+
+       repoName = 'maven'  //repo name default is maven
+       userOrg = 'zjclugger'  //bintray username
+       groupId = 'com.zjclugger.lib'  //compile part 1
+       artifactId = 'JLibrary'  //module name compile part 2
+       publishVersion = rootProject.ext.android["versionName"]  //version code,compile part 3
+       desc = 'My project library'
+       website = 'https://github.com/zjclugger/JLibrary' //github
+}
+*/
+
+//*************上传到JCenter************************************************************************
+/**
+ * King Zi:这种方式，也可以上传成功，但gradle引用格式为implementation 'JLibrary:CommonLibrary:unspecified'
+ * 并且，版本号能在WEB上显示，但引用时却是unspecified，可参考以下两个文件，理解相应的参数
+ * https://github.com/bintray/gradle-bintray-plugin/blob/master/src/main/groovy/com/jfrog/bintray/gradle/ProjectsEvaluatedBuildListener.groovy
+ * https://github.com/bintray/gradle-bintray-plugin/blob/master/src/main/groovy/com/jfrog/bintray/gradle/BintrayExtension.groovy
+ * 最终，暂时放弃这种方法。后续，继续探索有引用其他lib的上传方式。
+ */
+
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+def siteUrl = 'https://github.com/zjclugger/JLibrary'   // 项目的主页 github地址
+def gitUrl = 'https://github.com/zjclugger/JLibrary.git'   // Git仓库的url
+
+group = "com.zjclugger.lib"            // Maven Group ID for the artifact，唯一的包名
+version = "1.0.0"   // 版本号，下次更新是只需要更改版本号即可
+def libName = "JLibrary"    //发布到JCenter上的项目名字，必须填写
+
+/**
+ * 上面配置后上传至jcenter后的编译路径是这样的：
+ * compile  'com.zjclugger.lib:JLibrary:1.0.0'
+ * **/
+
+//生成源文件
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+//生成文档
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    options.encoding "UTF-8"
+    options.charSet 'UTF-8'
+    options.author true
+    options.version true
+    failOnError false
+}
+
+//文档打包成jar
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+//拷贝javadoc文件
+task copyDoc(type: Copy) {
+    from "${buildDir}/docs/"
+    into "docs"
+}
+
+//上传到jcenter所需要的源码文件
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+//implementation 'JLibrary:CommonLibrary:unspecified'
+
+// 配置maven库，生成POM.xml文件
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                // 打包的类型
+                packaging 'aar'
+                //项目描述，随意填
+                name "JLib"
+                // 项目的主页
+                url siteUrl
+
+                // 开源协议信息
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                // 开发者信息
+                developers {
+                    developer {
+                        id 'zjclugger'
+                        name 'King Zi'
+                        email 'zjclugger@126.com'
+                    }
+                }
+
+                // 软件管理信息
+                scm {
+                    connection gitUrl   // Git仓库地址
+                    developerConnection gitUrl  // Git仓库地址
+                    url siteUrl // 项目主页
+                }
+
+                //在这里【处理依赖传递】
+                dependencies {
+                    pom.withXml {
+                        def dependenciesNode = asNode().getAt('dependencies')[0] ?: asNode().appendNode('dependencies')
+                        // Iterate over the implementation dependencies (we don't want the test ones), adding a <dependency> node for each
+                        configurations.implementation.allDependencies.each {
+                            // Ensure dependencies such as fileTree are not included.
+                            if (it.name != 'unspecified') {
+                                def dependencyNode = dependenciesNode.appendNode('dependency')
+                                dependencyNode.appendNode('groupId', it.group)
+                                dependencyNode.appendNode('artifactId', it.name)
+                                dependencyNode.appendNode('version', it.version)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//上传到jcenter
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+bintray {
+    user = properties.getProperty("bintray.user")    //读取 local.properties 文件里面的 bintray.user
+    key = properties.getProperty("bintray.apikey")   //读取 local.properties 文件里面的 bintray.apikey
+    configurations = ['published', 'archives']
+    publish = true
+
+    pkg {
+        userOrg = "zjclugger"   //bintray.com的用户名
+        repo = "maven"  //在bintray上Package名字,我的是maven，根据自己在jcenter上定义的来
+        name = libName    //发布到JCenter上的项目名字，必须填写
+        desc = 'This is my project library'    //项目描述
+        licenses = ["Apache-2.0"]
+        websiteUrl = siteUrl
+        //issueTrackerUrl = PROJ_ISSUETRACKERURL
+
+        vcsUrl = gitUrl
+        licenses = ["Apache-2.0"]
+        publicDownloadNumbers = true
+    }
+}

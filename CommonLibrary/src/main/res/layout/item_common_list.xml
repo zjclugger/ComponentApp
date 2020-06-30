@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/common_list_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="@dimen/padding_smallest">
+
+    <ImageView
+        android:id="@+id/label_image_left"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/label_text"
+        style="@style/TextViewStyle"
+        android:layout_marginLeft="@dimen/margin_smallest"
+        android:layout_marginRight="@dimen/margin_smallest"
+        android:textSize="@dimen/text_size_normal"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/label_middle"
+        style="@style/TextViewStyle"
+        android:layout_marginLeft="@dimen/margin_smallest"
+        android:layout_marginRight="@dimen/margin_smallest"
+        android:textSize="@dimen/text_size_normal"
+        android:layout_weight="1"
+        android:visibility="gone" />
+
+    <TextView
+        android:textSize="@dimen/text_size_normal"
+        android:id="@+id/label_value"
+        style="@style/TextViewStyle"
+        android:layout_marginLeft="@dimen/margin_smallest"
+        android:layout_marginRight="@dimen/margin_smallest"
+        android:layout_weight="1" />
+
+    <ImageView
+        android:id="@+id/label_image_right"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="@dimen/margin_smallest"
+        android:visibility="gone" />
+</LinearLayout>

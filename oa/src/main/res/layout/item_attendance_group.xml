@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/margin_smallest">
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/elvv_attendance_group_name"
+            style="@style/ExtendLabelViewTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:label_text="考勤组一"
+            app:label_text_size="@dimen/text_size_small"
+            app:right_image_src="@mipmap/ic_del_trash_small" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/lvv_group_member"
+            style="@style/AttendanceGroup"
+            android:layout_below="@id/elvv_attendance_group_name"
+            app:label_text="成员："
+            app:value_text="35人" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/lvv_shifts"
+            style="@style/AttendanceGroup"
+            android:layout_below="@id/lvv_group_member"
+            android:layout_weight="1"
+            app:label_text="班次："
+            app:value_text="BOSS" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/lvv_place"
+            style="@style/AttendanceGroup"
+            android:layout_below="@id/lvv_shifts"
+            app:label_text="地点："
+            app:value_text="中南金石国际广场" />
+
+        <TextView
+            android:id="@+id/group_line"
+            style="@style/LinePortal"
+            android:layout_below="@id/lvv_place"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_small" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/group_line"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_rule_setting"
+                style="@style/Orange.ButtonStyle"
+                android:text="规则设置" />
+
+            <Button
+                android:id="@+id/btn_member_setting"
+                style="@style/Orange.ButtonStyle"
+                android:text="人员管理" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

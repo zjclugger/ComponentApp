@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin_smallest"
+    android:paddingBottom="@dimen/margin_small"
+    android:layout_marginRight="@dimen/margin_smallest">
+
+    <!--    android:layoutDirection="rtl"-->
+    <CheckBox
+        android:id="@+id/goods_choice_view"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/margin_small"
+        android:button="@drawable/bg_multiple_checkbox"
+        android:minWidth="30dp" />
+
+    <ImageView
+        android:id="@+id/goods_image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/margin_small"
+        android:layout_toRightOf="@id/goods_choice_view"
+        android:scaleType="fitXY"
+        android:src="@mipmap/img_picture_default" />
+
+    <RelativeLayout
+        android:id="@+id/goods_detail_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/goods_image">
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/goods_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:label_text="商品名称"
+            app:label_text_color="@color/black"
+            app:label_text_size="@dimen/text_size_normal" />
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/goods_price"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/goods_name"
+            app:label_text="价格"
+            app:label_text_color="@color/text_selected"
+            app:label_text_size="@dimen/text_size_normal" />
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/goods_sales_volume"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_below="@id/goods_price"
+            android:layout_alignParentLeft="true"
+            app:label_text="总销量"
+            app:label_text_color="@color/black"
+            app:label_text_size="@dimen/text_size_small"
+            app:middle_text_width="@dimen/margin_smallest"
+            app:value_text="30000"
+            app:value_text_color="@color/black"
+            app:value_text_size="@dimen/text_size_small" />
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/goods_stock"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_below="@id/goods_price"
+            android:layout_alignParentRight="true"
+            app:label_text="库存"
+            app:label_text_color="@color/black"
+            app:label_text_size="@dimen/text_size_small"
+            app:middle_text_width="@dimen/margin_smallest"
+            app:value_text="100"
+            app:value_text_color="@color/black"
+            app:value_text_size="@dimen/text_size_small" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="50dp">
+
+    <CheckBox
+        android:id="@+id/chk_contacts_staff"
+        style="@style/ContactsCheckboxStyle" />
+
+    <com.zjclugger.lib.view.CircleImageTextView
+        android:id="@+id/citv_staff_photo"
+        style="@style/CircleImage.CITVApproveStyle"
+        android:layout_toRightOf="@id/chk_contacts_staff"
+        app:citv_civ_text="名字"
+        app:citv_left_layout_width="WRAP_CONTENT"
+        android:paddingTop="3dp"
+        android:paddingBottom="2dp" />
+
+    <com.zjclugger.lib.view.LabelValueView
+        android:layout_marginLeft="@dimen/margin_smallest"
+        android:id="@+id/lvv_staff"
+        style="@style/VLabelValueViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/citv_staff_photo"
+        android:gravity="left|center_vertical"
+        app:label_text="张三丰"
+        app:label_text_color="@color/black"
+        app:label_text_gravity="left"
+        app:value_text="一代宗师"
+        app:value_text_color="@color/gray"
+        app:value_text_gravity="left"
+        app:value_text_size="@dimen/text_size_small" />
+
+    <View
+        style="@style/LinePortal"
+        android:background="@color/light_gray"
+        android:layout_alignLeft="@id/citv_staff_photo"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

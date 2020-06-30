@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    android:descendantFocusability="blocksDescendants"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <TextView
+        android:id="@+id/line_1"
+        style="@style/Line"
+        android:layout_below="@id/nav_layout" />
+
+    <TextView
+        android:id="@+id/assets_label_date"
+        style="@style/AssetsLabel"
+        android:layout_below="@id/line_1"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:drawablePadding="@dimen/margin_normal" />
+
+    <TextView
+        android:id="@+id/assets_label_currency"
+        style="@style/Right.AssetsLabel"
+        android:layout_below="@id/line_1"
+        android:text="单位：元" />
+
+    <TextView
+        android:id="@+id/line_2"
+        style="@style/Line"
+        android:layout_below="@id/assets_label_date" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/assets_tab_layout"
+        style="@style/TabLayoutStyle"
+        android:layout_below="@id/line_2" />
+
+    <TextView
+        android:id="@+id/line_3"
+        style="@style/Line"
+        android:layout_below="@id/assets_tab_layout" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/line_3">
+
+        <LinearLayout
+            android:id="@+id/list_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/assets_list_layout"
+                style="@style/ReportLayout">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_corners_border_report"
+                    android:orientation="vertical">
+
+                    <com.zjclugger.lib.view.LabelValueView
+                        style="@style/ReportTotalLabel"
+                        android:background="@color/lighter_gray"
+                        app:label_text="@string/report_current_assets" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/current_assets_recycler_view"
+                        style="@style/ReportRecyclerView" />
+
+                    <com.zjclugger.lib.view.LabelValueView
+                        android:id="@+id/current_assets_total"
+                        style="@style/ReportTotalLabel"
+                        app:label_text="@string/report_current_assets_total"
+                        app:value_text="0.00" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_smallest"
+                    android:background="@drawable/shape_corners_border_report"
+                    android:orientation="vertical">
+
+                    <com.zjclugger.lib.view.LabelValueView
+                        style="@style/ReportTotalLabel"
+                        android:background="@color/lighter_gray"
+                        app:label_text="@string/report_non_current_assets" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/no_current_assets_recycler_view"
+                        style="@style/ReportRecyclerView" />
+
+                    <com.zjclugger.lib.view.LabelValueView
+                        android:id="@+id/not_current_assets_total"
+                        style="@style/ReportTotalLabel"
+                        app:label_text="@string/non_current_assets_total"
+                        app:value_text="0.00" />
+
+                    <com.zjclugger.lib.view.LabelValueView
+                        android:id="@+id/assets_total"
+                        style="@style/ReportTotalLabel"
+                        app:label_text="@string/report_assets_total"
+                        app:value_text="0.00" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/liabilities_list_layout"
+                style="@style/ReportLayout"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_corners_border_report"
+                    android:orientation="vertical">
+
+                    <com.zjclugger.lib.view.LabelValueView
+                        style="@style/ReportTotalLabel"
+                        android:background="@color/lighter_gray"
+                        app:label_text="@string/report_current_liabilities" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/current_liabilities_recycler_view"
+                        style="@style/ReportRecyclerView" />
+
+                    <com.zjclugger.lib.view.LabelValueView
+                        android:id="@+id/current_liabilities_total"
+                        style="@style/ReportTotalLabel"
+                        app:label_text="@string/report_current_liabilities_total"
+                        app:value_text="0.00" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_smallest"
+                    android:background="@drawable/shape_corners_border_report"
+                    android:orientation="vertical">
+
+                    <com.zjclugger.lib.view.LabelValueView
+                        style="@style/ReportTotalLabel"
+                        android:background="@color/lighter_gray"
+                        app:label_text="@string/report_non_current_liabilities" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/no_current_liabilities_recycler_view"
+                        style="@style/ReportRecyclerView" />
+
+                    <com.zjclugger.lib.view.LabelValueView
+                        android:id="@+id/not_current_liabilities_total"
+                        style="@style/ReportTotalLabel"
+                        app:label_text="@string/report_non_current_liabilities_total"
+                        app:value_text="0.00" />
+
+                    <com.zjclugger.lib.view.LabelValueView
+                        android:id="@+id/liabilities_total"
+                        style="@style/ReportTotalLabel"
+                        app:label_text="@string/report_liabilities_total"
+                        app:value_text="0.00" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_smallest"
+                    android:background="@drawable/shape_corners_border_report"
+                    android:orientation="vertical">
+
+                    <com.zjclugger.lib.view.LabelValueView
+                        style="@style/ReportTotalLabel"
+                        android:background="@color/lighter_gray"
+                        app:label_text="@string/report_owner_equity" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/owner_equity_recycler_view"
+                        style="@style/ReportRecyclerView" />
+
+                    <com.zjclugger.lib.view.LabelValueView
+                        android:id="@+id/owner_equity_total"
+                        style="@style/ReportTotalLabel"
+                        app:label_text="@string/report_owner_equity_total"
+                        app:value_text="0.00" />
+
+                    <com.zjclugger.lib.view.LabelValueView
+                        android:id="@+id/owner_equity_liabilities_total"
+                        style="@style/ReportTotalLabel"
+                        app:label_text="@string/report_equity_liabilities_total"
+                        app:value_text="0.00" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

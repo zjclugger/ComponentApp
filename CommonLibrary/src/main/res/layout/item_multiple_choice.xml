@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin_smallest"
+    android:layout_marginRight="@dimen/margin_smallest">
+
+<!--    android:layoutDirection="rtl"-->
+    <CheckBox
+        android:id="@+id/multiple_choice_view"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:button="@drawable/bg_multiple_checkbox"
+        android:paddingLeft="@dimen/margin_small"
+        android:textSize="14sp"
+        android:text="测试"
+        android:textColor="@color/black" />
+
+</RelativeLayout>

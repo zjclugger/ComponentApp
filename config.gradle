@@ -1,0 +1,155 @@
+/**
+ * 统一管理类库及工具版本<br>
+ * Created by King.Zi on 2020/4/9.<br>
+ * Copyright (c) 2020 zjclugger.com
+ */
+ext {
+    isRunAll = true    //true,运行整个APP，false运行某个module
+
+    android = [
+            compileSdkVersion: 28,
+            buildToolsVersion: "28.0.3",
+            minSdkVersion    : 19,
+            targetSdkVersion : 28,
+            versionCode      : 1,
+            versionName      : "1.0.0"
+    ]
+
+    version = [
+            //com.android.support
+            asAppcompatVersion : "28.0.0",
+            espressoVersion    : "2.2.2",
+            javaVersion        : "1.8",
+            roomVersion        : "2.2.2",
+            pagingVersion      : "2.1.1",
+            androidxCoreVersion: "1.2.0",
+    ]
+
+    dependencies = [
+            //google
+            "material"                  : "com.google.android.material:material:1.0.0",
+            "flexbox"                   : "com.google.android:flexbox:2.0.1",
+            "autoService"               : "com.google.auto.service:auto-service:1.0-rc5",
+
+            //androidx
+            "androidxCore"              : "androidx.core:core:" + version["androidxCoreVersion"],
+            //androidx.arch.core:core-runtime
+            "androidxCoreRuntime"       : "androidx.arch.core:core-runtime:" + version["androidxCoreVersion"],
+            "androidxCoreKtx"           : "androidx.core:core-ktx:" + version["androidxCoreVersion"],
+            "androidxCoreRole"          : "androidx.core:core-role:" + version["androidxCoreVersion"],
+            "androidxAppcompat"         : "androidx.appcompat:appcompat:1.0.2",
+            "androidxTestRunner"        : "androidx.test:runner:1.2.0",
+            "androidxTestEspresso"      : "androidx.test.espresso:espresso-core:3.2.0",
+            "androidxRecyclerview"      : "androidx.recyclerview:recyclerview:1.0.0",
+            "androidxCardView"          : "androidx.cardview:cardview:1.0.0",
+            "androidxLifecycle-ext"     : "androidx.lifecycle:lifecycle-extensions:2.0.0",
+            "viewpager2"                : "androidx.viewpager2:viewpager2:1.0.0",
+            "androidxConstraintlayout"  : "androidx.constraintlayout:constraintlayout:1.1.2",
+            //androidx room
+            "androidxRoomRuntime"       : "androidx.room:room-runtime:" + version["roomVersion"],
+            "androidxRoomCompiler"      : "androidx.room:room-compiler:" + version["roomVersion"],
+            "androidxRoomRxjava2"       : "androidx.room:room-rxjava2:" + version["roomVersion"],
+            "androidxRoomGuava"         : "androidx.room:room-guava:" + version["roomVersion"],
+            "androidxRoomCommon"        : "androidx.room:room-common:" + version["roomVersion"],
+            // "androidxRoomMigration"     : "androidx.room:room-migration:" + version["roomVersion"],
+            "androidxRoomTesting"       : "androidx.room:room-testing:" + version["roomVersion"],
+            //viewmodel
+            "androidxViewmodel"         : "androidx.lifecycle:lifecycle-viewmodel:" + version["roomVersion"],
+            //paging
+            "androidxPagingCommon"      : "androidx.paging:paging-common:" + version["pagingVersion"],
+            "androidxPagingRuntime"     : "androidx.paging:paging-runtime:" + version["pagingVersion"],
+            "androidxPagingRxjava2"     : "androidx.paging:paging-rxjava2:" + version["pagingVersion"],
+            "androidxExifinterface"     : "androidx.exifinterface:exifinterface:1.0.0",
+            //tools
+            "multidex"                  : "androidx.multidex:multidex:2.0.1",
+
+            //Retrofit2
+            "retrofit"                  : "com.squareup.retrofit2:retrofit:2.3.0",
+            "retrofitConverter-gson"    : "com.squareup.retrofit2:converter-gson:2.3.0",
+            // 标准转换器,去掉 Retrofit以Mutipart上传参数时,String参数会多一对双引号
+            "retrofitConverter-scalars" : "com.squareup.retrofit2:converter-scalars:2.3.0",
+            //retrofitAdapter-rxjava2
+            "retrofitAdapter-rxjava2"   : "com.squareup.retrofit2:adapter-rxjava2:2.3.0",
+
+            //rxjava
+            "rxandroid2"                : "io.reactivex.rxjava2:rxandroid:2.1.1",
+            "rxjava2"                   : "io.reactivex.rxjava2:rxjava:2.2.10",
+
+            //OkHttp3-logging
+            "okhttp3Logging-interceptor": "com.squareup.okhttp3:logging-interceptor:4.0.1",
+            "okhttp3"                   : "com.squareup.okhttp3:okhttp:4.0.1",
+
+            //ButterKnife
+            "butterknife"               : "com.jakewharton:butterknife:10.2.1",
+            "butterknife-compiler"      : "com.jakewharton:butterknife-compiler:10.2.1",
+
+            //FAB
+            "floatingactionbutton"      : "com.getbase:floatingactionbutton:1.10.1",
+
+            //test
+            "junit"                     : "junit:junit:4.12",
+            "androidJUnitRunner"        : "android.support.test.runner.AndroidJUnitRunner",
+            "runner"                    : "com.android.support.test:runner:1.0.1",
+
+            //glide
+            "glide"                     : "com.github.bumptech.glide:glide:4.9.0",
+            "glideCompiler"             : "com.github.bumptech.glide:compiler:4.9.0",
+
+            "fresco"                    : "com.facebook.fresco:fresco:0.12.0",
+
+            "zxyRecovery"               : "com.zxy.android:recovery:0.0.8",
+
+            //ali arouter
+            "arouter"                   : "com.alibaba:arouter-api:1.5.0",
+            "arouterCompiler"           : "com.alibaba:arouter-compiler:1.2.2",
+
+            //logger
+            "logger"                    : "com.orhanobut:logger:2.2.0",
+
+            //permissions dispatcher
+            "permission"                : "org.permissionsdispatcher:permissionsdispatcher:4.5.0",
+            "permissionProcessor"       : "org.permissionsdispatcher:permissionsdispatcher-processor:4.5.0",
+
+            //BRVAH for recycler view
+            "RecyclerViewAdapter"       : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.47",
+
+            //github
+            "banner-v2"                 : "com.youth.banner:banner:2.0.8",
+            //banner-v1-1.4.10
+            "PictureSelector"           : "com.zjclugger.pictureselector:PictureLibrary:1.0.3",
+            "JScanner"                  : "com.zjclugger.jscanner:JScanner:1.0.1",
+            "JPickerView"               : "com.zjclugger.pickerview:JPickerView:1.0.1",
+
+            //super textview
+            //"SuperTextView"             : "com.github.lygttpod:SuperTextView:2.2.4",
+
+            //AutoSize
+            "AutoSize"                  : "me.jessyan:autosize:1.1.2",
+            //liveEventBus
+            "LiveEventBus"              : "com.jeremyliao:live-event-bus-x:1.5.3",
+
+            //SmartRefreshLayout
+            "SmartRefreshLayout"        : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0",   //1.0.5及以前版本的老用户升级需谨慎，API改动过大
+            //SmartRefreshLayout header
+            "SmartRefreshHeader"        : "com.scwang.smartrefresh:SmartRefreshHeader:1.1.0",   //没有使用特殊Header，可以不加这行
+
+            //ShortcutBadger
+            "ShortcutBadger"            : "me.leolin:ShortcutBadger:1.1.22@aar",
+
+            //sharp selector
+            //"DevShapeUtils"             : "cn.luliangdev:DevShapeUtils:1.1.0",
+
+            //SmartTable
+            "SmartTable"                : "com.github.huangyanbin:SmartTable:2.2.0",
+            "indicatorseekbar"          : "com.github.warkiz.widget:indicatorseekbar:2.1.2",
+            "gson"                      : "com.google.code.gson:gson:2.8.1",
+            "ECharts"                   : "com.github.abel533:ECharts:3.0.0.2",
+
+            "RatingBar"                 : "me.zhanghai.android.materialratingbar:library:1.4.0",
+            //compile 'com.github.hackware1993:MagicIndicator:1.6.0'
+            "MagicIndicator"            : "com.github.hackware1993:MagicIndicator:1.6.0",
+
+            //sku
+            "sku"                       : "com.wuhenzhizao:sku:1.0.4",
+    ]
+}

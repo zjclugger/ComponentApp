@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/oa_leave_request"
+        android:icon="@mipmap/ic_salary_normal"
+        android:title="我要请假" />
+
+    <item
+        android:id="@+id/oa_leave_records"
+        android:icon="@mipmap/ic_roster_normal"
+        android:title="请假记录" />
+
+
+</menu>

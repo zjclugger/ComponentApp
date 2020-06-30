@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_smallest"
+    android:background="@drawable/bg_button_white"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/margin_smallest"
+    android:paddingBottom="@dimen/margin_smallest">
+
+    <com.zjclugger.lib.view.ExtendLabelValueView
+        android:id="@+id/elvv_order_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/margin_smallest"
+        app:edit_text_visibility="GONE"
+        app:label_text="订编号："
+        app:label_text_size="@dimen/text_size_normal"
+        app:middle_text="0021308866"
+        app:middle_text_color="@color/text_gray"
+        app:middle_text_min_width="60dp"
+        app:middle_text_size="@dimen/text_size_normal"
+        app:value_text="进行中"
+        app:value_text_color="@color/text_selected"
+        app:value_text_gravity="right"
+        app:value_text_size="@dimen/text_size_small"
+        app:value_text_weight="1" />
+
+    <TextView
+        style="@style/Line"
+        android:layout_marginTop="@dimen/margin_smallest"
+        android:layout_marginBottom="@dimen/margin_smallest" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/margin_smallest">
+
+        <ImageView
+            android:id="@+id/iv_customer_detail"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_smallest"
+            android:src="@mipmap/ic_arrow_right" />
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/elvv_customer_name"
+            style="@style/OrderDetailItemStyle2"
+            android:layout_marginLeft="@dimen/margin_smallest"
+            android:layout_toLeftOf="@id/iv_customer_detail"
+            android:paddingLeft="-5dp"
+            app:edit_text_visibility="GONE"
+            app:label_text="张三"
+            app:middle_text_weight="0"
+            app:middle_text_width="10dp"
+            app:value_text="18788889999"
+            app:value_text_color="@color/text_gray"
+            app:value_text_gravity="left"
+            app:value_text_weight="1" />
+
+        <TextView
+            android:id="@+id/customer_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/elvv_customer_name"
+            android:layout_marginLeft="@dimen/margin_smallest"
+            android:layout_toLeftOf="@id/iv_customer_detail"
+            android:text="山东省青岛市市北区抚顺路988号福彩天天乐大厦16层201室"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text_size_normal" />
+    </RelativeLayout>
+
+    <TextView
+        style="@style/Line"
+        android:layout_marginTop="@dimen/margin_smallest"
+        android:layout_marginBottom="@dimen/margin_smallest" />
+
+    <com.zjclugger.lib.view.ExtendLabelValueView
+        android:id="@+id/elvv_goods_title"
+        style="@style/OrderDetailItemStyle2"
+        android:layout_marginLeft="@dimen/margin_smallest"
+        android:layout_marginRight="@dimen/margin_smallest"
+        app:label_text="商品"
+        app:value_text="收起"
+        app:value_text_color="@color/light_blue"
+        app:value_text_size="@dimen/text_size_small" />
+
+    <LinearLayout
+        android:id="@+id/order_detail_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/elvv_goods_name"
+            style="@style/OrderDetailItemStyle3"
+            app:label_text="商品名"
+            app:value_text="200.35" />
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/elvv_goods_count"
+            style="@style/OrderDetailItemStyle3"
+            app:label_text="购买数量"
+            app:value_text="20" />
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/elvv_service_cost"
+            style="@style/OrderDetailItemStyle3"
+            app:label_text="服务费"
+            app:value_text="10.35" />
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/elvv_order_cost"
+            style="@style/OrderDetailItemStyle3"
+            app:label_text="订单总额"
+            app:value_text="210.35" />
+
+        <LinearLayout
+            android:id="@+id/function_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin_small"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/order_receive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:background="@drawable/bg_button_border_red"
+                android:paddingLeft="@dimen/margin_small"
+                android:paddingTop="@dimen/margin_smallest"
+                android:paddingRight="@dimen/margin_small"
+                android:paddingBottom="@dimen/margin_smallest"
+                android:gravity="center"
+                android:minWidth="60dp"
+                android:text="接单"
+                android:textSize="@dimen/text_size_small" />
+
+            <TextView
+                android:id="@+id/order_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:background="@drawable/bg_button_border_red"
+                android:paddingLeft="@dimen/margin_small"
+                android:paddingTop="@dimen/margin_smallest"
+                android:paddingRight="@dimen/margin_small"
+                android:paddingBottom="@dimen/margin_smallest"
+                android:text="删除订单"
+                android:textSize="@dimen/text_size_small" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

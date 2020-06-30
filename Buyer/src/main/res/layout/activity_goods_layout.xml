@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    android:orientation="vertical">
+
+    <include layout="@layout/detail_title" />
+
+    <View style="@style/Line" />
+
+    <net.lucode.hackware.magicindicator.MagicIndicator
+        android:id="@+id/goods_magicindicator_tabs"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/alpa_background" />
+
+    <com.zjclugger.lib.view.NoScrollViewPager
+        android:id="@+id/goods_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>

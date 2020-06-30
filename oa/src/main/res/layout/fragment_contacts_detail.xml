@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white">
+
+    <include
+        android:id="@+id/nav_layout"
+        layout="@layout/detail_title" />
+
+    <RelativeLayout
+        android:id="@+id/contacts_photo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nav_layout"
+        android:background="@color/background_all"
+        android:orientation="vertical">
+
+        <com.zjclugger.lib.view.CircleImageView
+            android:id="@+id/contacts_photo_view"
+            style="@style/CircleStyle"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_normal"
+            android:src="@mipmap/image_head" />
+
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/contacts_name_view"
+            style="@style/Contacts.LabelValueViewStyle"
+            android:layout_below="@id/contacts_photo_view"
+            app:label_text="张三丰"
+            app:label_text_color="@color/bg_white"
+            app:label_text_size="@dimen/text_size_small"
+            app:value_text="部门经理"
+            app:value_text_color="@color/bg_white"
+            app:value_text_size="@dimen/text_size_small" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contacts_photo_layout"
+        android:orientation="vertical">
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/contacts_depart_view"
+            style="@style/Contacts.LabelValueViewStyle"
+            app:label_text="部门"
+            app:value_text="技术部" />
+
+        <TextView style="@style/Line" />
+
+        <com.zjclugger.lib.view.LabelValueView
+            android:id="@+id/contacts_entry_time"
+            style="@style/Contacts.LabelValueViewStyle"
+            app:label_text="入职时间"
+            app:value_text="2019-09-12" />
+
+        <TextView style="@style/Line" />
+
+        <RelativeLayout
+            android:id="@+id/contacts_phone_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/contacts_phone_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_small"
+                android:src="@mipmap/ic_phone_selected" />
+
+
+            <com.zjclugger.lib.view.LabelValueView
+                android:id="@+id/contacts_phone_number"
+                style="@style/Contacts.LabelValueViewStyle"
+                android:layout_toLeftOf="@id/contacts_phone_view"
+                app:label_text="电话"
+                app:value_text="1588889999" />
+        </RelativeLayout>
+
+        <TextView style="@style/Line" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+    defaultConfig {
+        applicationId "com.zjclugger.eshop.buyer"
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+
+    implementation project(path: ':CommonLibrary')
+    implementation project(path: ':ComponentLib')
+
+    if (rootProject.ext.isRunAll) {
+        //implementation project(path: ':Seller')
+        //implementation project(path: ':oa')
+    }
+
+    implementation rootProject.ext.dependencies["ShortcutBadger"]
+    implementation rootProject.ext.dependencies["MagicIndicator"]
+
+    //banner
+    implementation rootProject.ext.dependencies["banner-v2"]
+    implementation rootProject.ext.dependencies["RatingBar"]
+    implementation rootProject.ext.dependencies["viewpager2"]
+    implementation rootProject.ext.dependencies["flexbox"]
+    implementation rootProject.ext.dependencies["sku"]
+
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    annotationProcessor rootProject.ext.dependencies["arouterCompiler"]
+    annotationProcessor rootProject.ext.dependencies["autoService"]
+    annotationProcessor rootProject.ext.dependencies["permissionProcessor"]
+    annotationProcessor rootProject.ext.dependencies["androidxRoomCompiler"]
+
+    testImplementation rootProject.ext.dependencies["junit"]
+    androidTestImplementation rootProject.ext.dependencies["androidxTestRunner"]
+    androidTestImplementation rootProject.ext.dependencies["androidxTestEspresso"]
+
+}

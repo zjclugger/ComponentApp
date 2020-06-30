@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_white"
+    android:paddingBottom="@dimen/margin_normal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/params_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/title_layout"
+            layout="@layout/detail_title" />
+
+        <TextView style="@style/Line" />
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/statistical_title"
+            style="@style/Blue.PageItemTitleStyle"
+            app:label_text="@string/bill_reimbursement" />
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/statistical_dimensionality"
+            style="@style/Image.StatisticalExtendLabelViewTextStyle"
+            app:label_text="@string/statistical_dimension"
+            app:left_image_src="@mipmap/ic_dimensionality"
+            app:value_text="@string/reason_reimbursement" />
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/statistical_class"
+            style="@style/Image.StatisticalExtendLabelViewTextStyle"
+            app:label_text="@string/statistical_object"
+            app:left_image_src="@mipmap/ic_people_class"/>
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/statistical_datetime"
+            style="@style/Image.StatisticalExtendLabelViewTextStyle"
+            app:label_text="@string/statistical_time"
+            app:left_image_src="@mipmap/ic_people_class" />
+
+        <com.zjclugger.lib.view.ExtendLabelValueView
+            android:id="@+id/title_statistical_total"
+            style="@style/Blue.PageItemTitleStyle"
+            android:background="@color/lighter_gray"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/margin_normal"
+            app:label_text="@string/text_total"
+            app:left_image_scale_type="fixCenter"
+            app:left_image_src="@null"
+            app:value_text_color="@color/text_selected"
+            app:value_text_size="@dimen/text_size_small"
+            app:value_text_weight="10" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/statistical_class_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/params_layout" />
+
+</RelativeLayout>

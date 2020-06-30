@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <include layout="@layout/dialog_header_layout" />
+
+    <LinearLayout
+        android:id="@+id/dialog_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog_content"
+        android:gravity="center"
+        android:minHeight="80dp"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_small">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dialog_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dialog_title_layout"
+            android:padding="@dimen/margin_smallest" />
+    </LinearLayout>
+
+    <include layout="@layout/dialog_footer_layout" />
+
+</LinearLayout>
